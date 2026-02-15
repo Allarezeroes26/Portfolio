@@ -1,7 +1,7 @@
 import React from 'react';
 import resume from '../jsonResume/resume.json';
 import Me from '../assets/me.jpg';
-import { Github, Linkedin, SquareArrowOutUpRight} from 'lucide-react';
+import { Download, Github, Linkedin, SquareArrowOutUpRight} from 'lucide-react';
 import {
   Card,
   CardAction,
@@ -58,8 +58,7 @@ const Homepage = () => {
 
               <div className='flex flex-col sm:flex-row gap-5 justify-between w-full items-center'>
                 <div className='flex flex-row items-center gap-3 w-full sm:w-auto'>
-                  <Button size='lg' className="flex-1 sm:flex-none">Contact</Button>
-                  <Button size='lg' variant='outline' className="flex-1 sm:flex-none">Resume</Button>
+                  <Button size='lg' className="flex-1 sm:flex-none"><Download/> Resume</Button>
                 </div>
 
                 <div className='flex flex-row justify-center gap-3'>

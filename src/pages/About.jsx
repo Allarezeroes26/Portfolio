@@ -9,7 +9,6 @@ const About = () => {
     <div className='flex flex-col justify-center p-5 items-center w-full'>
       <div className='grid gap-5 grid-cols-1 lg:grid-cols-[2fr_1.2fr] w-full max-w-6xl items-start'>
         
-        {/* LEFT COLUMN: About & CTA */}
         <div className='flex flex-col gap-5'>
           <Card className='flex border-none rounded-4xl shadow-none flex-col bg-secondary p-6 md:p-10'>
             <CardHeader className='p-0 pb-6'>
@@ -26,14 +25,13 @@ const About = () => {
                 
                 <div className='flex gap-2 pt-2 flex-wrap'>
                   <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">Problem Solver</Badge>
-                  <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">Self-Taught</Badge>
-                  <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">Continuous Learner</Badge>
+                  <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">Fresh Graduate</Badge>
+                  <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">BSIT</Badge>
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          {/* Contact CTA - Moved below About Me */}
           <Card className='bg-primary text-primary-foreground rounded-4xl border-none shadow-none p-8 flex flex-col gap-4'>
             <div>
               <p className='font-display text-xl'>Want to collaborate?</p>
@@ -45,7 +43,6 @@ const About = () => {
           </Card>
         </div>
 
-        {/* RIGHT COLUMN: Journey Sidebar */}
         <Card className='flex flex-col bg-secondary rounded-4xl border-none shadow-none p-6 md:p-8'>
           <CardHeader className="p-0 mb-8">
             <h2 className='font-display text-2xl flex items-center gap-3'>

@@ -79,5 +79,28 @@
             "demo": true,
             "link": "https://url-shortener-z7fr.onrender.com"
         }
+    ],
+
+    "experience": [
+        {
+            "position": "On The Job Training",
+            "from": "April - June 2023",
+            "company": "Ilocos Sur Polytecnic State College (Tagudin Campus)",
+            "res": [
+                "Provided basic technical support and assisted with system documentation.",
+                "Helped maintain IT equipment and supported internal users",
+                "Contributed to minor troubleshooting and hardware organization."
+            ]
+        },
+        {
+            "position": "On The Job Training",
+            "from": "Feb 13 - May 21, 2025",
+            "company": "Negosyo Center, LGU Santa Cruz",
+            "res": [
+                "Assisted with digitizing local business records and supported digital tools.",
+                "Helped in data entry, formatting reports, and using productivity software.",
+                "Collaborated with staff on basic system tasks and digital workflows."
+            ]
+        }
     ]
 }

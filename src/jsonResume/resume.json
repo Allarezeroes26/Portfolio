@@ -1,0 +1,83 @@
+{
+    "firstName": "John Erwin",
+    "nickName": "Erwin",
+    "lastName": "Bacani",
+    "address": "Ilocos Sur",
+    "position": "Aspiring Full Stack Dev.",
+    "available": true,
+    "techStack": [
+        {
+            "techName": "react"
+        },
+        {
+            "techName": "node.js"
+        },
+        {
+            "techName": "tailwind"
+        },
+        {
+            "techName": "express.js"
+        },
+        {
+            "techName": "mongodb"
+        },
+        {
+            "techName": "zustand"
+        },
+        {
+            "techName": "shadcn"
+        }
+    ],
+    "projects": [
+        {
+            "title": "Allkits App",
+            "description": "AllKits is a full-stack e-commerce web application built with MERN Stack.",
+            "stack": ["React", "MongoDB", "Express.js", "Node.js", "TailwindCSS"],
+            "demo": true,
+            "link": "https://allkitscrud-1.onrender.com",
+            "pics": [
+                { "showcasePic": "https://ibb.co/FbsfV87q" }
+            ]
+        },
+        {
+            "title": "JobFu (Job Portal Web App)",
+            "description": "JobFu is a job portal web application designed to connect job seekers with employers. It provides features for job listings, applications, user profiles, and real-time interaction between employers and job seekers.",
+            "stack": ["React", "MongoDB", "Express.js", "Node.js", "ShadCN", "TailwindCSS", "Zustand"],
+            "link": "https://jobfufrontend.onrender.com",
+            "demo": true,
+            "pics": [
+                { "showcasePic": "https://ibb.co/67f4prv8" }
+            ]
+        },
+        {
+            "title": "Full-Stack Todo & Focus Timer App",
+            "description": "A full-stack productivity app built with React, Zustand, Node.js, Express, and MongoDB",
+            "stack": ["React", "MongoDB", "Express.js", "Node.js", "DaisyUI", "TailwindCSS", "Zustand"],
+            "link": "https://todolist-frontend-tmm7.onrender.com",
+            "demo": true,
+            "pics": [
+                { "showcasePic": "https://ibb.co/0L5WBk7" }
+            ]
+        },
+        {
+            "title": "Python File Organizer",
+            "description": "A simple Python automation tool that organizes your messy folders (like your Downloads folder) into neatly categorized subfolders — automatically!",
+            "stack": ["Python"],
+            "demo": false
+        },
+        {
+            "title": "Game Library",
+            "description": "A web application that lets users explore games by genre, platform, developer, and tags — powered by a RESTful API built with Node.js and Express.",
+            "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js", "GSAP"],
+            "demo": true,
+            "link": "https://game-library-v8cx.onrender.com"
+        },
+        {
+            "title": "URL Shortener",
+            "description": "A fast, reliable, and minimalistic URL Shortener built with Node.js, Express, BitLyAPI, and MongoDB.",
+            "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js"],
+            "demo": true,
+            "link": "https://url-shortener-z7fr.onrender.com"
+        }
+    ]
+}

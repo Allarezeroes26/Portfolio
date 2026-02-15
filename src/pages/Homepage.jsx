@@ -1,0 +1,153 @@
+import React from 'react';
+import resume from '../jsonResume/resume.json';
+import Me from '../assets/me.jpg';
+import { Github, Linkedin, SquareArrowOutUpRight} from 'lucide-react';
+import {
+  Card,
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+} from "@/components/ui/card"
+import { Button } from '@/components/ui/button';
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipTrigger,
+} from "@/components/ui/tooltip"
+import { useTheme } from 'next-themes';
+import { Sun, Moon } from 'lucide-react';
+import { Badge } from '@/components/ui/badge';
+import JobFu from '../jsonResume/ProjectPics/JobfuShowcase.png'
+import Allkit from '../jsonResume/ProjectPics/AllkitShowcase.png'
+import Todo from '../jsonResume/ProjectPics/TodoShowcase.png'
+import { Link } from 'react-router-dom';
+
+const Homepage = () => {
+
+  const {theme, setTheme} = useTheme()
+
+  return (
+    <div className='flex flex-col min-h-screen w-full items-center p-5 justify-center'>
+      <div className='grid gap-5 grid-cols-1 lg:grid-cols-[2fr_1fr_1fr] w-full max-w-6xl'>
+  
+        <Card className='rounded-4xl p-6 md:p-10 bg-secondary w-full border-none shadow-none flex flex-col justify-between'>
+          <CardHeader className='flex flex-row justify-between items-center p-0 mb-8 md:mb-10 space-y-0'>
+            <div className="shrink-0">
+              <img src={Me} className='w-15 h-15 rounded-lg object-cover' alt="Profile" />
+            </div>
+            <div className='flex items-center gap-2 bg-background/50 px-3 py-1 rounded-full'>
+              <span className={`h-2 w-2 rounded-full inline-block ${resume.available ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
+              <p className='font-paragraph text-xs md:text-sm font-medium'>
+                {resume.available ? 'Available' : 'Not Available'}
+              </p>
+            </div>
+          </CardHeader>
+
+          <CardContent className='p-0 flex flex-col gap-5 md:gap-10'>
+            <h1 className='font-display text-3xl md:text-4xl lg:text-5xl leading-tight'>
+              Hi, I'm {resume.nickName} <span className='animate-wiggle inline-block origin-bottom-right'>👋</span> <br />
+              <span className="text-muted-foreground">An </span>
+              <span className='text-orange-500'>{resume.position}</span> 
+              <span className="text-muted-foreground"> based in </span>{resume.address}.
+            </h1>
+
+            <div className='flex flex-col sm:flex-row gap-5 justify-between w-full items-center'>
+              <div className='flex flex-row items-center gap-3 w-full sm:w-auto'>
+                <Button size='lg' className="flex-1 sm:flex-none">Contact</Button>
+                <Button size='lg' variant='outline' className="flex-1 sm:flex-none">Resume</Button>
+              </div>
+
+              <div className='flex flex-row justify-center gap-3'>
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button size='icon' variant='ghost' className="rounded-full"><Github className="size-5"/></Button>
+                  </TooltipTrigger>
+                  <TooltipContent>GitHub</TooltipContent>
+                </Tooltip>
+
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <Button size='icon' variant='ghost' className="rounded-full"><Linkedin className="size-5"/></Button>
+                  </TooltipTrigger>
+                  <TooltipContent>LinkedIn</TooltipContent>
+                </Tooltip>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+
+        <div className='flex flex-col gap-5'>
+          <Card 
+            onClick={() => setTheme(theme === "dark" ? "light" : "dark")} 
+            className='flex-1 cursor-pointer hover:bg-accent/50 transition-all p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center gap-4'
+          >
+            <div className="p-3 bg-background w-fit rounded-2xl shadow-sm">
+              { theme === "dark" ? <Moon className='size-6'/> : <Sun className='size-6'/> }
+            </div>
+            <div>
+              <p className='font-display font-medium'>
+                { theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode" }
+              </p>
+              <p className="text-xs text-muted-foreground">Better for your eyes</p>
+            </div>
+          </Card>
+          
+          <Card className='flex-1 p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center'>
+            <CardHeader className="p-0 mb-2">
+              <h2 className='font-display text-2xl md:text-3xl'>Tech Stack</h2>
+            </CardHeader>
+            <CardContent className="p-0 flex flex-row gap-5 flex-wrap">
+              {resume.techStack.map((stack) => (
+                <Badge key={stack.techName} variant='default'>{stack.techName}</Badge>
+              ))}
+            </CardContent>
+          </Card>
+        </div>
+
+        <div className='p-0'>
+          <Card className='h-full bg-secondary shadow-none border-none'>
+              <CardHeader>
+                <h1 className='font-display text-3xl'>My Projects</h1>
+              </CardHeader>
+              <CardContent className='grid grid-cols-1 justify-center gap-4'>
+                {[
+                  { img: JobFu, to: "/projects/jobfu" },
+                  { img: Allkit, to: "/projects/allkit" },
+                  { img: Todo, to: "/projects/todo" }
+                ].map((proj, i) => (
+                  <Link 
+                    key={i} 
+                    to={proj.to} 
+                    className="group relative w-60 overflow-hidden rounded-2xl"
+                  >
+                    <img 
+                      src={proj.img} 
+                      className='h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-40' 
+                    />
+                    
+                    <div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+                      <span className='font-display text-sm font-bold tracking-wider'>
+                        VIEW PROJECT
+                      </span>
+                    </div>
+                  </Link>
+                ))}
+
+                <Link to="/projects" className="w-60">
+                  <Button className='font-paragraph text-primary hover:text-secondary flex w-full p-4 justify-between bg-background rounded-xl flex-row mt-2'>  
+                    <p className='font-light'>View All</p>
+                    <SquareArrowOutUpRight size={18} />
+                  </Button>
+                </Link>
+              </CardContent>
+          </Card>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+export default Homepage;

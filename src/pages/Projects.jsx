@@ -47,7 +47,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className='flex flex-col w-full items-center p-5 lg:p-10'>
+    <div id='projects-section' ref={containerRef} className='flex flex-col w-full items-center p-5 lg:p-10'>
       
       <div className='anim-header w-full max-w-6xl mb-10 text-center lg:text-left'>
         <h1 className='font-display text-4xl md:text-6xl font-bold mb-4 tracking-tighter'>Selected Works</h1>
@@ -82,7 +82,7 @@ const Projects = () => {
 
               <div className={`${hasImage ? 'md:absolute md:inset-x-0 md:bottom-0 bg-secondary/90' : 'bg-secondary'} backdrop-blur-md p-6 flex flex-col gap-4 transition-all duration-300 group-hover:bg-secondary/95 border-t border-white/5 h-full md:h-auto`}>
                 <div>
-                  <h3 className='font-display text-lg md:text-xl font-bold leading-tight'>
+                  <h3 className='font-display text-lg md:text-xl text-orange-500 font-bold leading-tight'>
                     {project.title}
                   </h3>
                   <p className='text-muted-foreground text-xs md:text-sm mt-1'>

@@ -1,5 +1,5 @@
 {
-    "firstName": "John Erwin",
+    "firstName": "Erwin",
     "nickName": "Erwin",
     "lastName": "Bacani",
     "address": "Ilocos Sur",
@@ -97,7 +97,7 @@
         {
             "position": "On The Job Training",
             "from": "April - June 2023",
-            "company": "Ilocos Sur Polytecnic State College (Tagudin Campus)",
+            "company": "Ilocos Sur Polytecnic State College",
             "res": [
                 "Provided basic technical support and assisted with system documentation.",
                 "Helped maintain IT equipment and supported internal users",
@@ -107,7 +107,7 @@
         {
             "position": "On The Job Training",
             "from": "Feb 13 - May 21, 2025",
-            "company": "Negosyo Center, LGU Santa Cruz",
+            "company": "Negosyo Center, LGU",
             "res": [
                 "Assisted with digitizing local business records and supported digital tools.",
                 "Helped in data entry, formatting reports, and using productivity software.",

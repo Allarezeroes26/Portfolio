@@ -23,7 +23,6 @@ import { Badge } from '@/components/ui/badge';
 import JobFu from '../jsonResume/ProjectPics/JobfuShowcase.png'
 import Allkit from '../jsonResume/ProjectPics/AllkitShowcase.png'
 import Todo from '../jsonResume/ProjectPics/TodoShowcase.png'
-import { Link } from 'react-router-dom';
 import About from './About';
 
 import { gsap } from "gsap";
@@ -32,6 +31,7 @@ import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import Projects from './Projects';
+import Contact from './Contact';
 
 gsap.registerPlugin(useGSAP,ScrollTrigger,TextPlugin);
 
@@ -53,14 +53,17 @@ const Homepage = () => {
       x: -100,
       opacity: 0,
     })
+
     .from(bento1.current, {
       y: -100,
       opacity: 0,
     }, "-=0.7")
+
     .from(bento2.current, {
       y: 100,
       opacity: 0,
     }, "-=0.8")
+
     .from(projectShowcase.current, {
       x: 100,
       opacity: 0,
@@ -91,6 +94,10 @@ const Homepage = () => {
     });
   });
   
+  const scrollToProjects = () => {
+    document.getElementById("projects-section")?.scrollIntoView({behavior: "smooth"})
+  };
+
   return (
     <>
       <div className='flex flex-col min-h-screen w-full items-center p-5 justify-center'>
@@ -119,7 +126,7 @@ const Homepage = () => {
 
               <div className='action-btns flex flex-col sm:flex-row gap-5 justify-between w-full items-center'>
                 <div className='flex flex-row items-center gap-3 w-full sm:w-auto'>
-                  <Button size='lg' className="flex-1 sm:flex-none"><Download/> Resume</Button>
+                  <Button size='lg' className="flex-1 bg-orange-500 text-secondary hover:bg-orange-300 sm:flex-none"><Download/> Resume</Button>
                 </div>
 
                 <div className='flex flex-row justify-center gap-3'>
@@ -188,30 +195,29 @@ const Homepage = () => {
                     { img: Allkit, to: "/projects/allkit" },
                     { img: Todo, to: "/projects/todo" }
                   ].map((proj, i) => (
-                    <Link 
-                      key={i} 
-                      to={proj.to} 
+                    <div 
+                      key={i}
                       className="group relative w-full max-w-[240px] aspect-video overflow-hidden rounded-2xl"
                     >
                       <img 
                         src={proj.img} 
-                        className='h-full w-full object-cover transition-all duration-500 group-hover:scale-110 group-hover:opacity-40' 
+                        className='h-full w-full object-cover backdrop-blur-md grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-40' 
                       />
                       
-                      <div className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
-                        <span className='font-display text-sm font-bold tracking-wider text-white'>
+                      <button onClick={scrollToProjects} className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
+                        <span className='font-display text-sm font-bold tracking-wider text-primary'>
                           VIEW PROJECT
                         </span>
-                      </div>
-                    </Link>
+                      </button>
+                    </div>
                   ))}
 
-                  <Link to="/projects" className="w-full max-w-[240px]">
-                    <Button className='font-paragraph text-primary hover:text-secondary flex w-full p-4 justify-between bg-background rounded-xl flex-row mt-2'>  
+                  <div className="w-full max-w-[240px]">
+                    <Button onClick={scrollToProjects} className='font-paragraph text-primary hover:text-secondary flex w-full p-4 justify-between bg-background rounded-xl flex-row mt-2'>  
                       <p className='font-light'>View All</p>
                       <SquareArrowOutUpRight size={18} />
                     </Button>
-                  </Link>
+                  </div>
                 </CardContent>
             </Card>
           </div>
@@ -219,6 +225,7 @@ const Homepage = () => {
       </div>
       <About />
       <Projects />
+      <Contact />
     </>  
   )
 }

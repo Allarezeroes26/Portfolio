@@ -64,7 +64,7 @@ const About = () => {
               <CardContent className='p-0'>
                 <div className='flex flex-col gap-6'>
                   <p className='font-paragraph font-light text-lg leading-relaxed text-muted-foreground'>
-                    While I don’t have formal industry experience yet, I’ve built multiple <span className='text-foreground font-medium'>full-stack web applications</span> using the MERN stack. I enjoy building scalable, clean, and user-focused applications from scratch.
+                    While I don’t have formal industry experience yet, I’ve built multiple <span className='text-foreground text-orange-500 font-medium'>full-stack web applications</span> using the MERN stack. I enjoy building scalable, clean, and user-focused applications from scratch.
                   </p>
                   <p className='font-paragraph font-light text-lg leading-relaxed text-muted-foreground'>
                     I’m comfortable working with <span className='text-foreground font-medium'>APIs, JWT authentication, state management, and deployment</span>. I’m now looking to contribute to a team environment where I can grow and ship production-ready features.
@@ -81,7 +81,7 @@ const About = () => {
           </div>
 
           <div ref={leftBottom}>
-            <Card className='bg-primary text-primary-foreground rounded-4xl border-none shadow-none p-8 flex flex-col gap-4'>
+            <Card className='bg-primary text-primary-foreground bg-orange-500 rounded-4xl border-none shadow-none p-8 flex flex-col gap-4'>
               <div>
                 <p className='font-display text-xl'>Want to collaborate?</p>
                 <p className='text-sm opacity-70'>Let's turn your ideas into code.</p>
@@ -97,7 +97,7 @@ const About = () => {
           <Card className='flex flex-col h-full bg-secondary rounded-4xl border-none shadow-none p-6 md:p-8'>
             <CardHeader className="p-0 mb-8">
               <h2 className='font-display text-2xl flex items-center gap-3'>
-                <Briefcase size={22} className="text-primary"/>
+                <Briefcase size={22} className="text-orange-500"/>
                 Journey
               </h2>
             </CardHeader>
@@ -105,13 +105,13 @@ const About = () => {
               <div className='relative ml-2 flex flex-col gap-10 border-l border-muted-foreground/20'>
                 {Resume.experience.map((exp, i) => (
                   <div key={i} className='relative pl-8'>
-                    <div className='journey-dot absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-primary ring-4 ring-secondary' />
+                    <div className='journey-dot absolute -left-[5px] top-1 w-2.5 h-2.5 rounded-full bg-orange-500 ring-4 ring-secondary' />
                     
                     <div className='flex flex-col mb-2'>
                       <span className='text-[10px] font-bold uppercase tracking-widest text-muted-foreground'>
                         {exp.from}
                       </span>
-                      <h3 className='text-sm font-bold text-foreground'>
+                      <h3 className='text-sm font-bold text-orange-500'>
                         {exp.company}
                       </h3>
                     </div>

@@ -56,7 +56,7 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 w-full max-w-6xl auto-rows-[350px]'>
+      <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 w-full max-w-6xl auto-rows-auto md:auto-rows-[400px]'>
         {resume.projects.map((project, index) => {
           const isLarge = index === 0 || index === 1;
           const hasImage = project.pics && project.pics.length > 0;
@@ -68,7 +68,7 @@ const Projects = () => {
                 isLarge ? 'md:col-span-2 lg:col-span-3 lg:row-span-2' : 'md:col-span-2 lg:col-span-2'
               }`}
             >
-              <div className={`${hasImage ? 'h-full' : 'h-1/2'} w-full overflow-hidden bg-muted/10 flex items-center justify-center`}>
+              <div className={`${hasImage ? 'h-48 md:h-full' : 'h-32'} w-full overflow-hidden bg-muted/10 flex items-center justify-center shrink-0`}>
                 {hasImage ? (
                    <img 
                     src={project.pics[0].showcasePic} 
@@ -80,43 +80,47 @@ const Projects = () => {
                 )}
               </div>
 
-              <div className={`${hasImage ? 'absolute inset-x-0 bottom-0 bg-secondary/80 backdrop-blur-md border-t border-white/5' : 'relative bg-secondary'} p-6 flex flex-col gap-3 transition-all duration-300 group-hover:bg-secondary/90`}>
+              <div className={`${hasImage ? 'md:absolute md:inset-x-0 md:bottom-0 bg-secondary/90' : 'bg-secondary'} backdrop-blur-md p-6 flex flex-col gap-4 transition-all duration-300 group-hover:bg-secondary/95 border-t border-white/5 h-full md:h-auto`}>
                 <div>
                   <h3 className='font-display text-lg md:text-xl font-bold leading-tight'>
                     {project.title}
                   </h3>
-                  <p className='text-muted-foreground text-xs md:text-sm line-clamp-2 mt-1'>
+                  <p className='text-muted-foreground text-xs md:text-sm mt-1'>
                     {project.description}
                   </p>
                 </div>
 
-                <div className='flex flex-wrap gap-1'>
+                <div className='flex flex-wrap gap-2'>
                   {project.stack.map((tech, i) => (
-                    <Badge key={i} variant="outline" className="text-[10px] font-normal opacity-70 bg-background/30 border-none px-2 py-0">
+                    <Badge 
+                      key={i} 
+                      variant="default" 
+                      className="text-[11px] font-semibold bg-primary/20 text-primary hover:bg-primary/30 border-none px-3 py-1 uppercase tracking-wider"
+                    >
                       {tech}
                     </Badge>
                   ))}
                 </div>
 
-                <div className='flex items-center gap-2 mt-1'>
+                <div className='flex items-center gap-2 mt-auto pt-2'>
                   {project.demo && (
                     <Button 
                       variant="default" 
                       size="sm" 
-                      className="h-7 px-3 gap-2 text-[11px]"
+                      className="h-8 px-4 gap-2 text-xs"
                       onClick={() => window.open(project.link, '_blank')}
                     >
-                      Demo <SquareArrowOutUpRight size={12} />
+                      Demo <SquareArrowOutUpRight size={14} />
                     </Button>
                   )}
                   {project.srccode && (
                     <Button 
                       variant="outline" 
                       size="sm" 
-                      className="h-7 px-3 gap-2 text-[11px] bg-background/40"
+                      className="h-8 px-4 gap-2 text-xs bg-background/40"
                       onClick={() => window.open(project.srccode, '_blank')}
                     >
-                      Github <Github size={12} />
+                      Github <Github size={14} />
                     </Button>
                   )}
                 </div>

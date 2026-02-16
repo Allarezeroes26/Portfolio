@@ -34,9 +34,10 @@
             "description": "AllKits is a full-stack e-commerce web application built with MERN Stack.",
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "TailwindCSS"],
             "demo": true,
+            "srccode": "https://github.com/Allarezeroes26/AllkitsCRUD",
             "link": "https://allkitscrud-1.onrender.com",
             "pics": [
-                { "showcasePic": "https://ibb.co/FbsfV87q" }
+                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-14_123958_kz1qpp.png" }
             ]
         },
         {
@@ -45,8 +46,9 @@
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "ShadCN", "TailwindCSS", "Zustand"],
             "link": "https://jobfufrontend.onrender.com",
             "demo": true,
+            "srccode": "https://github.com/Allarezeroes26/JobFu",
             "pics": [
-                { "showcasePic": "https://ibb.co/67f4prv8" }
+                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212572/Screenshot_2026-02-15_151713_sj7pxd.png" }
             ]
         },
         {
@@ -55,29 +57,39 @@
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "DaisyUI", "TailwindCSS", "Zustand"],
             "link": "https://todolist-frontend-tmm7.onrender.com",
             "demo": true,
+            "srccode": "https://github.com/Allarezeroes26/TodoList",
             "pics": [
-                { "showcasePic": "https://ibb.co/0L5WBk7" }
+                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212592/Screenshot_2026-02-02_070256_efat02.png" }
             ]
         },
         {
             "title": "Python File Organizer",
             "description": "A simple Python automation tool that organizes your messy folders (like your Downloads folder) into neatly categorized subfolders — automatically!",
             "stack": ["Python"],
-            "demo": false
+            "demo": false,
+            "srccode": "https://github.com/Allarezeroes26/File-Organizer"
         },
         {
             "title": "Game Library",
             "description": "A web application that lets users explore games by genre, platform, developer, and tags — powered by a RESTful API built with Node.js and Express.",
             "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js", "GSAP"],
             "demo": true,
-            "link": "https://game-library-v8cx.onrender.com"
+            "link": "https://game-library-v8cx.onrender.com",
+            "srccode": "https://github.com/Allarezeroes26/Game-Library",
+            "pics": [
+                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212571/Screenshot_2026-02-16_104854_zfpryu.png" }
+            ]
         },
         {
             "title": "URL Shortener",
             "description": "A fast, reliable, and minimalistic URL Shortener built with Node.js, Express, BitLyAPI, and MongoDB.",
             "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js"],
             "demo": true,
-            "link": "https://url-shortener-z7fr.onrender.com"
+            "link": "https://url-shortener-z7fr.onrender.com",
+            "srccode": "https://github.com/Allarezeroes26/URL-Shortener",
+            "pics": [
+                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-16_105205_zg9cff.png" }
+            ]
         }
     ],
 

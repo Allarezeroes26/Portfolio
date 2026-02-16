@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import resume from '../jsonResume/resume.json';
 import Me from '../assets/me.jpg';
 import { Download, Github, Linkedin, SquareArrowOutUpRight} from 'lucide-react';
@@ -26,16 +26,77 @@ import Todo from '../jsonResume/ProjectPics/TodoShowcase.png'
 import { Link } from 'react-router-dom';
 import About from './About';
 
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+    
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+import Projects from './Projects';
+
+gsap.registerPlugin(useGSAP,ScrollTrigger,TextPlugin);
+
 const Homepage = () => {
 
   const {theme, setTheme} = useTheme()
+  
+  const bento1 = useRef()
+  const bento2 = useRef()
+  const mainIntro = useRef()
+  const projectShowcase = useRef()
 
+  useGSAP(() => {
+    const tl = gsap.timeline({
+      defaults: { duration: 1, ease: "back.out(1.2)" }
+    });
+
+    tl.from(mainIntro.current, {
+      x: -100,
+      opacity: 0,
+    })
+    .from(bento1.current, {
+      y: -100,
+      opacity: 0,
+    }, "-=0.7")
+    .from(bento2.current, {
+      y: 100,
+      opacity: 0,
+    }, "-=0.8")
+    .from(projectShowcase.current, {
+      x: 100,
+      opacity: 0,
+    }, "-=0.8");
+
+    tl.from(".intro-text span", {
+      y: 20,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.8,
+      ease: "power3.out"
+    }, "-=0.5");
+
+    tl.from(".action-btns > *", {
+      scale: 0.8,
+      opacity: 0,
+      stagger: 0.1,
+      duration: 0.5,
+      ease: "back.out(2)"
+    }, "-=0.4");
+
+    gsap.to(".shrink-0 img", {
+      y: 5,
+      duration: 2,
+      repeat: -1,
+      yoyo: true,
+      ease: "sine.inOut"
+    });
+  });
+  
   return (
     <>
       <div className='flex flex-col min-h-screen w-full items-center p-5 justify-center'>
         <div className='grid gap-5 grid-cols-1 lg:grid-cols-[2fr_1fr_1fr] w-full max-w-6xl'>
     
-          <Card className='rounded-4xl p-6 md:p-10 bg-secondary w-full border-none shadow-none flex flex-col justify-between'>
+          <Card ref={mainIntro} className='rounded-4xl p-6 md:p-10 bg-secondary w-full border-none shadow-none flex flex-col justify-between'>
             <CardHeader className='flex flex-row justify-between items-center p-0 space-y-0'>
               <div className="shrink-0">
                 <img src={Me} className='w-15 h-15 rounded-lg object-cover' alt="Profile" />
@@ -49,14 +110,14 @@ const Homepage = () => {
             </CardHeader>
 
             <CardContent className='p-0 flex flex-col gap-5 md:gap-22'>
-              <h1 className='font-display text-3xl md:text-4xl lg:text-5xl leading-tight'>
+              <h1 className='intro-text font-display text-3xl md:text-4xl lg:text-5xl leading-tight'>
                 Hi, I'm {resume.nickName} <span className='animate-wiggle inline-block origin-bottom-right'>👋</span> <br />
                 <span className="text-muted-foreground">An </span>
                 <span className='text-orange-500'>{resume.position}</span> 
                 <span className="text-muted-foreground"> based in </span>{resume.address}.
               </h1>
 
-              <div className='flex flex-col sm:flex-row gap-5 justify-between w-full items-center'>
+              <div className='action-btns flex flex-col sm:flex-row gap-5 justify-between w-full items-center'>
                 <div className='flex flex-row items-center gap-3 w-full sm:w-auto'>
                   <Button size='lg' className="flex-1 sm:flex-none"><Download/> Resume</Button>
                 </div>
@@ -88,7 +149,7 @@ const Homepage = () => {
             </CardContent>
           </Card>
 
-          <div className='flex flex-col gap-5'>
+          <div ref={bento1} className='flex flex-col gap-5'>
             <Card 
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")} 
               className='flex-1 cursor-pointer hover:bg-accent/50 transition-all p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center gap-4'
@@ -104,7 +165,7 @@ const Homepage = () => {
               </div>
             </Card>
             
-            <Card className='flex-1 p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center'>
+            <Card ref={bento2} className='flex-1 p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center'>
               <CardHeader className="p-0 mb-2">
                 <h2 className='font-display text-2xl md:text-3xl'>Tech Stack</h2>
               </CardHeader>
@@ -116,7 +177,7 @@ const Homepage = () => {
             </Card>
           </div>
 
-          <div className='p-0'>
+          <div ref={projectShowcase} className='p-0'>
             <Card className='h-full bg-secondary shadow-none border-none'>
                 <CardHeader>
                   <h1 className='font-display text-3xl'>My Projects</h1>
@@ -157,6 +218,7 @@ const Homepage = () => {
         </div>
       </div>
       <About />
+      <Projects />
     </>  
   )
 }

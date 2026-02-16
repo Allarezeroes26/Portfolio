@@ -51,6 +51,10 @@ const About = () => {
     });
   }, { scope: aboutRef });
 
+  const scrollToForm = () => {
+    document.getElementById("contact-form")?.scrollIntoView({behavior: "smooth"})
+  };
+
   return (
     <div ref={aboutRef} className='flex flex-col justify-center p-5 items-center w-full overflow-hidden'>
       <div className='grid gap-5 grid-cols-1 lg:grid-cols-[2fr_1.2fr] w-full max-w-6xl items-start'>
@@ -86,7 +90,7 @@ const About = () => {
                 <p className='font-display text-xl'>Want to collaborate?</p>
                 <p className='text-sm opacity-70'>Let's turn your ideas into code.</p>
               </div>
-              <button className='w-full bg-background text-foreground rounded-2xl py-3 font-bold text-sm hover:scale-[1.02] transition-all active:scale-95'>
+              <button onClick={scrollToForm} className='w-full bg-background text-foreground rounded-2xl py-3 font-bold text-sm hover:scale-[1.02] transition-all active:scale-95'>
                 Get in Touch
               </button>
             </Card>

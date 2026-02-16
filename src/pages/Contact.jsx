@@ -111,7 +111,7 @@ const Contact = () => {
   }, []);
 
   return (
-    <div ref={containerRef} className='flex items-center min-h-[80vh] justify-center w-full p-5 lg:p-10 mb-20'>
+    <div ref={containerRef} id='contact-form' className='flex items-center min-h-[80vh] justify-center w-full p-5 lg:p-10 mb-20'>
       <div className='w-full max-w-6xl'>
         
         <div className='contact-header mb-10 text-center lg:text-left'>

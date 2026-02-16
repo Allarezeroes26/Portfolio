@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import {
   Card,
   CardContent,
@@ -15,9 +15,58 @@ import { SendHorizonal } from 'lucide-react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
+import emailjs from '@emailjs/browser'
+import toast from 'react-hot-toast';
+
 gsap.registerPlugin(ScrollTrigger);
 
 const Contact = () => {
+
+    const [formData, setFormData] = useState({
+        name: "",
+        email: "",
+        subject: "",
+        message: ""
+    });
+
+    const [ loading, setLoading ] = useState(false);
+
+    const handleChange = (e) => {
+        setFormData({...formData, [e.target.id]: e.target.value });
+    };
+
+    const handleSubmit = async (e) => {
+        e.preventDefault();
+        setLoading(true);
+
+        try {
+            await emailjs.send(
+                import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+                import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+                {
+                    from_name: formData.name,
+                    from_email: formData.email,
+                    subject: formData.subject,
+                    message: formData.message
+                },
+                import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+            );
+
+            toast.success('Message Sent!');
+            setFormData({
+                name: "",
+                email: "",
+                subject: "",
+                message: ""
+            });
+        } catch (err) {
+            console.error('Error: ', err);
+            toast.error(`Error ${err?.status || ''}: ${err?.text || 'Failed to send message'}`);
+        } finally {
+            setLoading(false);
+        }
+    };
+
   const containerRef = useRef(null);
 
   useLayoutEffect(() => {
@@ -40,12 +89,14 @@ const Contact = () => {
         duration: 0.8,
         ease: "power3.out"
       })
+
       .to(".contact-card", {
         opacity: 1,
         y: 0,
         duration: 0.8,
         ease: "power3.out"
       }, "-=0.5")
+
       .to(".form-item", {
         opacity: 1,
         x: 0,
@@ -77,21 +128,27 @@ const Contact = () => {
           </CardHeader>
           
           <CardContent>
-            <form className='grid gap-6'>
+            <form onSubmit={handleSubmit} className='grid gap-6'>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
                 <div className='form-item space-y-2'>
                   <Label htmlFor="name" className="text-xs uppercase tracking-widest opacity-70">Name</Label>
                   <Input 
                     id="name" 
-                    placeholder="John Doe" 
+                    value={formData.name}
+                    onChange={handleChange}
+                    placeholder="John Doe"
+                    required 
                     className="bg-background/50 border-none rounded-xl focus-visible:ring-orange-500/20"
                   />
                 </div>
                 <div className='form-item space-y-2'>
                   <Label htmlFor="email" className="text-xs uppercase tracking-widest opacity-70">Email</Label>
                   <Input 
-                    id="email" 
-                    type="email" 
+                    id="email"
+                    value={formData.email}
+                    onChange={handleChange} 
+                    type="email"
+                    required 
                     placeholder="john@example.com" 
                     className="bg-background/50 border-none rounded-xl focus-visible:ring-orange-500/20"
                   />
@@ -102,7 +159,10 @@ const Contact = () => {
                 <Label htmlFor="subject" className="text-xs uppercase tracking-widest opacity-70">Subject</Label>
                 <Input 
                   id="subject" 
-                  placeholder="Project Inquiry" 
+                  value={formData.subject}
+                  onChange={handleChange}
+                  placeholder="Project Inquiry"
+                  required 
                   className="bg-background/50 border-none rounded-xl focus-visible:ring-orange-500/20"
                 />
               </div>
@@ -110,15 +170,18 @@ const Contact = () => {
               <div className='form-item space-y-2'>
                 <Label htmlFor="message" className="text-xs uppercase tracking-widest opacity-70">Message</Label>
                 <Textarea 
-                  id="message" 
+                  id="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required 
                   placeholder="Tell me about your project..." 
                   className="min-h-[150px] bg-background/50 border-none rounded-2xl focus-visible:ring-orange-500/20 resize-none"
                 />
               </div>
 
               <div className='form-item'>
-                <Button size="lg" className="w-full md:w-fit bg-orange-500 text-secondary gap-2 rounded-xl px-8 transition-all hover:scale-105 active:scale-95 hover:bg-orange-600">
-                  Send Message <SendHorizonal size={18} />
+                <Button type="submit" size="lg" className="w-full md:w-fit bg-orange-500 text-secondary gap-2 rounded-xl px-8 transition-all hover:scale-105 active:scale-95 hover:bg-orange-600">
+                  {loading ? "Sending ... " : `Send Message`}
                 </Button>
               </div>
             </form>

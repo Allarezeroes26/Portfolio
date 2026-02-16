@@ -126,7 +126,15 @@ const Homepage = () => {
 
               <div className='action-btns flex flex-col sm:flex-row gap-5 justify-between w-full items-center'>
                 <div className='flex flex-row items-center gap-3 w-full sm:w-auto'>
-                  <Button size='lg' className="flex-1 bg-orange-500 text-secondary hover:bg-orange-300 sm:flex-none"><Download/> Resume</Button>
+                  <Button 
+                    size='lg' 
+                    className="flex-1 bg-orange-500 text-secondary hover:bg-orange-300 sm:flex-none"
+                    asChild
+                  >
+                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download>
+                      <Download /> Resume
+                    </a>
+                  </Button>
                 </div>
 
                 <div className='flex flex-row justify-center gap-3'>

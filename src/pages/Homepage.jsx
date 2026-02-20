@@ -32,6 +32,7 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { TextPlugin } from "gsap/TextPlugin";
 import Projects from './Projects';
 import Contact from './Contact';
+import StackIcon from 'tech-stack-icons';
 
 gsap.registerPlugin(useGSAP,ScrollTrigger,TextPlugin);
 
@@ -186,7 +187,19 @@ const Homepage = () => {
               </CardHeader>
               <CardContent className="p-0 flex flex-row gap-5 flex-wrap">
                 {resume.techStack.map((stack) => (
-                  <Badge key={stack.techName} className='cursor-default hover:scale-110' variant='default'>{stack.techName}</Badge>
+                  <Tooltip key={stack.techName}>
+                    <TooltipTrigger>
+                      <Badge 
+                        className='p-2 bg-background/50 hover:bg-orange-500/20 transition-colors border-none'
+                      >
+                        <StackIcon 
+                          name={stack.techName} 
+                          className="size-10 grayscale hover:grayscale-0 transition-all" 
+                        />
+                      </Badge>
+                    </TooltipTrigger>
+                    <TooltipContent>{stack.techName}</TooltipContent>
+                  </Tooltip>
                 ))}
               </CardContent>
             </Card>

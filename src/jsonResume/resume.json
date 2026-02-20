@@ -10,13 +10,13 @@
             "techName": "react"
         },
         {
-            "techName": "node.js"
+            "techName": "nodejs"
         },
         {
-            "techName": "tailwind"
+            "techName": "tailwindcss"
         },
         {
-            "techName": "express.js"
+            "techName": "expressjs"
         },
         {
             "techName": "mongodb"

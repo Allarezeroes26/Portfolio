@@ -20,12 +20,6 @@
         },
         {
             "techName": "mongodb"
-        },
-        {
-            "techName": "zustand"
-        },
-        {
-            "techName": "shadcn"
         }
     ],
     "projects": [

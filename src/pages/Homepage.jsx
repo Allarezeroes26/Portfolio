@@ -102,7 +102,7 @@ const Homepage = () => {
   return (
     <>
       <div className='flex flex-col min-h-screen w-full items-center p-5 justify-center'>
-        <div className='grid gap-5 grid-cols-1 lg:grid-cols-[2fr_1fr_1fr] w-full max-w-6xl'>
+        <div className='grid gap-2 grid-cols-1 lg:grid-cols-[2fr_1fr_1fr] w-full max-w-6xl'>
     
           <Card ref={mainIntro} className='rounded-4xl p-6 md:p-10 bg-secondary w-full border-none shadow-none flex flex-col justify-between'>
             <CardHeader className='flex flex-row justify-between items-center p-0 space-y-0'>
@@ -117,7 +117,7 @@ const Homepage = () => {
               </div>
             </CardHeader>
 
-            <CardContent className='p-0 flex flex-col gap-5 md:gap-22'>
+            <CardContent className='p-0 flex flex-col gap-5 md:gap-30'>
               <h1 className='intro-text font-display text-3xl md:text-4xl lg:text-5xl leading-tight'>
                 Hi, I'm {resume.nickName} <span className='animate-wiggle inline-block origin-bottom-right'>👋</span> <br />
                 <span className="text-muted-foreground">An </span>
@@ -168,7 +168,7 @@ const Homepage = () => {
           <div ref={bento1} className='flex flex-col gap-5'>
             <Card 
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")} 
-              className='flex-1 cursor-pointer hover:bg-accent/50 transition-all p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center gap-4'
+              className='flex-1 cursor-pointer hover:bg-accent/50 transition-all p-4 md:p-6 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center gap-4'
             >
               <div className="p-3 bg-background w-fit rounded-2xl shadow-sm">
                 { theme === "dark" ? <Moon className='size-6'/> : <Sun className='size-6'/> }

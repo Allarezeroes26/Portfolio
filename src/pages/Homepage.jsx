@@ -194,7 +194,7 @@ const Homepage = () => {
                       >
                         <StackIcon 
                           name={stack.techName} 
-                          className="size-10 grayscale hover:grayscale-0 transition-all" 
+                          className="size-5 grayscale hover:grayscale-0 transition-all" 
                         />
                       </Badge>
                     </TooltipTrigger>

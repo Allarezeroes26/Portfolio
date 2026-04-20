@@ -3,7 +3,7 @@
     "nickName": "Erwin",
     "lastName": "Bacani",
     "address": "Ilocos Sur",
-    "position": "Full Stack Dev.",
+    "position": "Fresh Grad Full Stack Developer",
     "available": true,
     "techStack": [
         {
@@ -20,6 +20,9 @@
         },
         {
             "techName": "mongodb"
+        },
+        {
+            "techName": "python"
         }
     ],
     "projects": [

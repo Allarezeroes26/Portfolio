@@ -3,43 +3,32 @@
     "nickName": "Erwin",
     "lastName": "Bacani",
     "address": "Ilocos Sur",
-    "position": "Fresh Grad Full Stack Developer",
+    "position": "Full Stack Developer",
     "available": true,
     "techStack": [
         {
-            "techName": "react"
-        },
-        {
-            "techName": "nodejs"
-        },
-        {
-            "techName": "tailwindcss"
-        },
-        {
-            "techName": "expressjs"
-        },
-        {
-            "techName": "mongodb"
-        },
-        {
+             "techName": "react"
+         },
+         {
+             "techName": "nodejs"
+         },
+         {
+             "techName": "tailwindcss"
+         },
+         {
+             "techName": "expressjs"
+         },
+         {
+             "techName": "mongodb"
+         },
+         {
             "techName": "python"
         }
     ],
     "projects": [
         {
-            "title": "Allkits App",
-            "description": "AllKits is a full-stack e-commerce web application built with MERN Stack.",
-            "stack": ["React", "MongoDB", "Express.js", "Node.js", "TailwindCSS"],
-            "demo": true,
-            "srccode": "https://github.com/Allarezeroes26/AllkitsCRUD",
-            "link": "https://allkitscrud-1.onrender.com",
-            "pics": [
-                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-14_123958_kz1qpp.png" }
-            ]
-        },
-        {
             "title": "JobFu (Job Portal Web App)",
-            "description": "JobFu is a job portal web application designed to connect job seekers with employers. It provides features for job listings, applications, user profiles, and real-time interaction between employers and job seekers.",
+            "description": "A comprehensive job portal platform enabling real-time interaction between employers and job seekers. Features secure user authentication and dynamic job management.",
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "ShadCN", "TailwindCSS", "Zustand"],
             "link": "https://jobfufrontend.onrender.com",
             "demo": true,
@@ -49,8 +38,19 @@
             ]
         },
         {
+            "title": "Allkits App",
+            "description": "A full-stack e-commerce solution built with the MERN stack, featuring product management and a responsive shopping interface.",
+            "stack": ["React", "MongoDB", "Express.js", "Node.js", "TailwindCSS"],
+            "demo": true,
+            "srccode": "https://github.com/Allarezeroes26/AllkitsCRUD",
+            "link": "https://allkitscrud-1.onrender.com",
+            "pics": [
+                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-14_123958_kz1qpp.png" }
+            ]
+        },
+        {
             "title": "Full-Stack Todo & Focus Timer App",
-            "description": "A full-stack productivity app built with React, Zustand, Node.js, Express, and MongoDB",
+            "description": "A productivity suite that integrates a task manager with a Pomodoro timer, utilizing Zustand for efficient global state management.",
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "DaisyUI", "TailwindCSS", "Zustand"],
             "link": "https://todolist-frontend-tmm7.onrender.com",
             "demo": true,
@@ -61,14 +61,14 @@
         },
         {
             "title": "Python File Organizer",
-            "description": "A simple Python automation tool that organizes your messy folders (like your Downloads folder) into neatly categorized subfolders — automatically!",
+            "description": "An automation script designed to clean and categorize directory contents automatically based on file extensions.",
             "stack": ["Python"],
             "demo": false,
             "srccode": "https://github.com/Allarezeroes26/File-Organizer"
         },
         {
             "title": "Game Library",
-            "description": "A web application that lets users explore games by genre, platform, developer, and tags — powered by a RESTful API built with Node.js and Express.",
+            "description": "A dynamic web application for exploring gaming databases, featuring complex filtering by genre and platform via RESTful API integration.",
             "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js", "GSAP"],
             "demo": true,
             "link": "https://game-library-v8cx.onrender.com",
@@ -79,7 +79,7 @@
         },
         {
             "title": "URL Shortener",
-            "description": "A fast, reliable, and minimalistic URL Shortener built with Node.js, Express, BitLyAPI, and MongoDB.",
+            "description": "A high-performance utility for transforming long URLs into manageable links using Node.js and BitLy API integration.",
             "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js"],
             "demo": true,
             "link": "https://url-shortener-z7fr.onrender.com",
@@ -89,26 +89,25 @@
             ]
         }
     ],
-
     "experience": [
         {
-            "position": "On The Job Training",
-            "from": "April - June 2023",
-            "company": "Ilocos Sur Polytecnic State College",
-            "res": [
-                "Provided basic technical support and assisted with system documentation.",
-                "Helped maintain IT equipment and supported internal users",
-                "Contributed to minor troubleshooting and hardware organization."
-            ]
-        },
-        {
-            "position": "On The Job Training",
+            "position": "IT Intern (On-the-Job Training)",
             "from": "Feb 13 - May 21, 2025",
             "company": "Negosyo Center, LGU",
             "res": [
-                "Assisted with digitizing local business records and supported digital tools.",
-                "Helped in data entry, formatting reports, and using productivity software.",
-                "Collaborated with staff on basic system tasks and digital workflows."
+                "Digitalized local business records to improve administrative efficiency and data accessibility.",
+                "Streamlined digital workflows by implementing productivity software and formatting automated reports.",
+                "Collaborated with staff to maintain and troubleshoot internal digital systems."
+            ]
+        },
+        {
+            "position": "IT Technical Intern",
+            "from": "April - June 2023",
+            "company": "Ilocos Sur Polytechnic State College",
+            "res": [
+                "Provided technical support and developed system documentation for institutional software.",
+                "Maintained campus IT infrastructure and supported end-users with hardware troubleshooting.",
+                "Executed hardware organization and preventive maintenance for IT equipment."
             ]
         }
     ]

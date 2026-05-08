@@ -8,6 +8,10 @@ import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip
 import { useTheme } from 'next-themes';
 import StackIcon from 'tech-stack-icons';
 
+import Projects from '../components/Projects';
+import About from '../components/About';
+import Contact from '../components/Contact';
+
 import { gsap } from "gsap";
 import { useGSAP } from "@gsap/react";
 

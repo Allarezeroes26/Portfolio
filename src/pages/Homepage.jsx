@@ -23,6 +23,7 @@ import { Badge } from '@/components/ui/badge';
 import JobFu from '../jsonResume/ProjectPics/JobfuShowcase.png'
 import Allkit from '../jsonResume/ProjectPics/AllkitShowcase.png'
 import Todo from '../jsonResume/ProjectPics/TodoShowcase.png'
+import LeadCRM from '../jsonResume/ProjectPics/LeadCRM.png'
 import About from './About';
 
 import { gsap } from "gsap";
@@ -153,7 +154,7 @@ const Homepage = () => {
                 <Tooltip>
                   <TooltipTrigger asChild>
                     <Button size='icon' variant='ghost' className="rounded-full" asChild>
-                      <a href="https://linkedin.com/in/erwin-bacani-90853a359" target='_blank' rel="noopener noreferrer">
+                      <a href="https://www.linkedin.com/in/john-erwin-bacani-90853a359" target='_blank' rel="noopener noreferrer">
                         <Linkedin className="size-5"/>
                       </a>
                     </Button>
@@ -213,7 +214,7 @@ const Homepage = () => {
                 <CardContent className='grid grid-cols-1 items-center justify-items-center gap-4'>
                   {[
                     { img: JobFu, to: "/projects/jobfu" },
-                    { img: Allkit, to: "/projects/allkit" },
+                    { img: LeadCRM, to: "/projects/allkit" },
                     { img: Todo, to: "/projects/todo" }
                   ].map((proj, i) => (
                     <div 

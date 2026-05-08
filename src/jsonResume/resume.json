@@ -3,89 +3,129 @@
     "nickName": "Erwin",
     "lastName": "Bacani",
     "address": "Ilocos Sur",
-    "position": "Full Stack Developer",
+    "position": "Full Stack Developer & Machine Learning Enthusiast",
     "available": true,
     "techStack": [
         {
-             "techName": "react"
-         },
-         {
-             "techName": "nodejs"
-         },
-         {
-             "techName": "tailwindcss"
-         },
-         {
-             "techName": "expressjs"
-         },
-         {
-             "techName": "mongodb"
-         },
-         {
+            "techName": "react"
+        },
+        {
+            "techName": "nextjs"
+        },
+        {
+            "techName": "typescript"
+        },
+        {
+            "techName": "javascript"
+        },
+        {
+            "techName": "nodejs"
+        },
+        {
+            "techName": "expressjs"
+        },
+        {
+            "techName": "mongodb"
+        },
+        {
+            "techName": "tailwindcss"
+        },
+        {
             "techName": "python"
+        },
+        {
+            "techName": "fastapi"
+        },
+        {
+            "techName": "git"
+        },
+        {
+            "techName": "github"
         }
     ],
     "projects": [
         {
-            "title": "JobFu (Job Portal Web App)",
-            "description": "A comprehensive job portal platform enabling real-time interaction between employers and job seekers. Features secure user authentication and dynamic job management.",
+            "title": "Lead Intelligence System",
+            "description": "A machine learning-powered predictive analytics CRM built with FastAPI and Next.js. Designed to analyze customer conversion probability using a custom Logistic Regression model with transparent weight visualization, telemetry dashboards, batch scoring, and real-time inference tracking.",
+            "stack": ["Next.js", "FastAPI", "Python", "TailwindCSS", "ShadCN", "NumPy", "Pandas"],
+            "demo": false,
+            "srccode": "https://github.com/Allarezeroes26/Lead-Scoring-System",
+            "pics": [
+                {
+                    "showcasePic": "./ProjectPics/LeadCRM.png"
+                }
+            ]
+        },
+        {
+            "title": "JobFu (Job Portal Web Platform)",
+            "description": "A full-stack recruitment platform designed to streamline interaction between employers and job seekers. Features secure authentication, role-based access, dynamic job posting management, application tracking, and responsive UI architecture for seamless user experience.",
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "ShadCN", "TailwindCSS", "Zustand"],
             "link": "https://jobfufrontend.onrender.com",
             "demo": true,
             "srccode": "https://github.com/Allarezeroes26/JobFu",
             "pics": [
-                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212572/Screenshot_2026-02-15_151713_sj7pxd.png" }
+                {
+                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212572/Screenshot_2026-02-15_151713_sj7pxd.png"
+                }
             ]
         },
         {
             "title": "Allkits App",
-            "description": "A full-stack e-commerce solution built with the MERN stack, featuring product management and a responsive shopping interface.",
+            "description": "A modern MERN-stack e-commerce application built for product management and scalable online shopping workflows. Includes responsive product browsing, CRUD-based inventory management, and a clean UI optimized for usability across devices.",
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "TailwindCSS"],
             "demo": true,
             "srccode": "https://github.com/Allarezeroes26/AllkitsCRUD",
             "link": "https://allkitscrud-1.onrender.com",
             "pics": [
-                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-14_123958_kz1qpp.png" }
+                {
+                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-14_123958_kz1qpp.png"
+                }
             ]
         },
         {
             "title": "Full-Stack Todo & Focus Timer App",
-            "description": "A productivity suite that integrates a task manager with a Pomodoro timer, utilizing Zustand for efficient global state management.",
+            "description": "A productivity-focused application that combines task management with an integrated Pomodoro focus timer. Built with efficient global state management using Zustand and designed to improve workflow organization and concentration tracking.",
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "DaisyUI", "TailwindCSS", "Zustand"],
             "link": "https://todolist-frontend-tmm7.onrender.com",
             "demo": true,
             "srccode": "https://github.com/Allarezeroes26/TodoList",
             "pics": [
-                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212592/Screenshot_2026-02-02_070256_efat02.png" }
+                {
+                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212592/Screenshot_2026-02-02_070256_efat02.png"
+                }
             ]
         },
         {
             "title": "Python File Organizer",
-            "description": "An automation script designed to clean and categorize directory contents automatically based on file extensions.",
+            "description": "An automation utility that intelligently sorts and categorizes files based on extension type. Designed to reduce manual file management and improve workspace organization through Python scripting automation.",
             "stack": ["Python"],
             "demo": false,
             "srccode": "https://github.com/Allarezeroes26/File-Organizer"
         },
         {
             "title": "Game Library",
-            "description": "A dynamic web application for exploring gaming databases, featuring complex filtering by genre and platform via RESTful API integration.",
+            "description": "A dynamic gaming discovery platform powered by API integration and advanced filtering capabilities. Users can browse titles by genre, platform, and popularity while interacting with animated UI transitions powered by GSAP.",
             "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js", "GSAP"],
             "demo": true,
             "link": "https://game-library-v8cx.onrender.com",
             "srccode": "https://github.com/Allarezeroes26/Game-Library",
             "pics": [
-                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212571/Screenshot_2026-02-16_104854_zfpryu.png" }
+                {
+                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212571/Screenshot_2026-02-16_104854_zfpryu.png"
+                }
             ]
         },
         {
             "title": "URL Shortener",
-            "description": "A high-performance utility for transforming long URLs into manageable links using Node.js and BitLy API integration.",
+            "description": "A lightweight URL shortening service utilizing Node.js and Bitly API integration to transform long URLs into clean, manageable links with fast response handling and simplified sharing functionality.",
             "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js"],
             "demo": true,
             "link": "https://url-shortener-z7fr.onrender.com",
             "srccode": "https://github.com/Allarezeroes26/URL-Shortener",
             "pics": [
-                { "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-16_105205_zg9cff.png" }
+                {
+                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-16_105205_zg9cff.png"
+                }
             ]
         }
     ],
@@ -95,9 +135,9 @@
             "from": "Feb 13 - May 21, 2025",
             "company": "Negosyo Center, LGU",
             "res": [
-                "Digitalized local business records to improve administrative efficiency and data accessibility.",
-                "Streamlined digital workflows by implementing productivity software and formatting automated reports.",
-                "Collaborated with staff to maintain and troubleshoot internal digital systems."
+                "Digitized and organized local business records to improve administrative efficiency and long-term data accessibility.",
+                "Improved internal digital workflows through document automation, productivity tooling, and structured reporting systems.",
+                "Assisted in maintaining and troubleshooting office hardware, software, and internal digital infrastructure."
             ]
         },
         {
@@ -105,9 +145,9 @@
             "from": "April - June 2023",
             "company": "Ilocos Sur Polytechnic State College",
             "res": [
-                "Provided technical support and developed system documentation for institutional software.",
-                "Maintained campus IT infrastructure and supported end-users with hardware troubleshooting.",
-                "Executed hardware organization and preventive maintenance for IT equipment."
+                "Provided technical support for institutional software systems and assisted in maintaining IT-related documentation.",
+                "Supported campus IT operations through hardware troubleshooting, maintenance, and end-user assistance.",
+                "Performed preventive maintenance and organizational management for institutional computer equipment and peripherals."
             ]
         }
     ]

@@ -68,16 +68,16 @@ const About = () => {
               <CardContent className='p-0'>
                 <div className='flex flex-col gap-6'>
                   <p className='font-paragraph font-light text-lg leading-relaxed text-muted-foreground'>
-                    While I don’t have formal industry experience yet, I’ve built multiple <span className='text-foreground text-orange-500 font-medium'>full-stack web applications</span> using the MERN stack. I enjoy building scalable, clean, and user-focused applications from scratch.
+                    I’m a self-driven developer focused on building modern full-stack web applications. While I don’t yet have formal industry experience, I’ve developed multiple <span className='text-foreground text-orange-500 font-medium'>end-to-end MERN projects</span> that emphasize performance, scalability, and clean user experience.
                   </p>
                   <p className='font-paragraph font-light text-lg leading-relaxed text-muted-foreground'>
-                    I’m comfortable working with <span className='text-foreground font-medium'>APIs, JWT authentication, state management, and deployment</span>. I’m now looking to contribute to a team environment where I can grow and ship production-ready features.
+                    I’m comfortable working with <span className='text-foreground font-medium'>REST APIs, JWT authentication, state management, and deployment workflows</span>. I’m currently seeking opportunities where I can contribute to real-world systems while continuously improving as a developer in a production environment.
                   </p>
                   
                   <div className='flex gap-2 pt-2 flex-wrap'>
                     <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">Problem Solver</Badge>
-                    <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">Fresh Graduate</Badge>
-                    <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">BSIT</Badge>
+                    <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">Entry-Level Developer</Badge>
+                    <Badge variant="outline" className="px-4 py-1 border-muted-foreground/20 text-muted-foreground">BSIT Graduate</Badge>
                   </div>
                 </div>
               </CardContent>
@@ -87,11 +87,11 @@ const About = () => {
           <div ref={leftBottom}>
             <Card className='bg-primary text-primary-foreground bg-orange-500 rounded-4xl border-none shadow-none p-8 flex flex-col gap-4'>
               <div>
-                <p className='font-display text-xl'>Want to collaborate?</p>
-                <p className='text-sm opacity-70'>Let's turn your ideas into code.</p>
+                <p className='font-display text-xl'>Let’s build something together</p>
+                <p className='text-sm opacity-70'>Got an idea? I can help turn it into a working product.</p>
               </div>
               <button onClick={scrollToForm} className='w-full bg-background text-foreground rounded-2xl py-3 font-bold text-sm hover:scale-[1.02] transition-all active:scale-95'>
-                Get in Touch
+                Contact Me
               </button>
             </Card>
           </div>
@@ -102,7 +102,7 @@ const About = () => {
             <CardHeader className="p-0 mb-8">
               <h2 className='font-display text-2xl flex items-center gap-3'>
                 <Briefcase size={22} className="text-orange-500"/>
-                Journey
+                Experience Journey
               </h2>
             </CardHeader>
             <CardContent className="p-0">

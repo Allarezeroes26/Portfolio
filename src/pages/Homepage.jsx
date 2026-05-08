@@ -1,50 +1,38 @@
 import React, { useRef } from 'react';
 import resume from '../jsonResume/resume.json';
 import Me from '../assets/me.jpg';
-import { Download, Github, Linkedin, SquareArrowOutUpRight} from 'lucide-react';
+import { Download, Github, Linkedin, Moon, Sun } from 'lucide-react';
 import {
   Card,
-  CardAction,
   CardContent,
-  CardDescription,
-  CardFooter,
   CardHeader,
-  CardTitle,
-} from "@/components/ui/card"
+} from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
 import {
   Tooltip,
   TooltipContent,
   TooltipTrigger,
-} from "@/components/ui/tooltip"
+} from "@/components/ui/tooltip";
 import { useTheme } from 'next-themes';
-import { Sun, Moon } from 'lucide-react';
 import { Badge } from '@/components/ui/badge';
-import JobFu from '../jsonResume/ProjectPics/JobfuShowcase.png'
-import Allkit from '../jsonResume/ProjectPics/AllkitShowcase.png'
-import Todo from '../jsonResume/ProjectPics/TodoShowcase.png'
-import LeadCRM from '../jsonResume/ProjectPics/LeadCRM.png'
 import About from './About';
-
-import { gsap } from "gsap";
-import { useGSAP } from "@gsap/react";
-    
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { TextPlugin } from "gsap/TextPlugin";
 import Projects from './Projects';
 import Contact from './Contact';
 import StackIcon from 'tech-stack-icons';
 
-gsap.registerPlugin(useGSAP,ScrollTrigger,TextPlugin);
+import { gsap } from "gsap";
+import { useGSAP } from "@gsap/react";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { TextPlugin } from "gsap/TextPlugin";
+
+gsap.registerPlugin(useGSAP, ScrollTrigger, TextPlugin);
 
 const Homepage = () => {
-
-  const {theme, setTheme} = useTheme()
+  const { theme, setTheme } = useTheme();
   
-  const bento1 = useRef()
-  const bento2 = useRef()
-  const mainIntro = useRef()
-  const projectShowcase = useRef()
+  const bento1 = useRef();
+  const bento2 = useRef();
+  const mainIntro = useRef();
 
   useGSAP(() => {
     const tl = gsap.timeline({
@@ -55,19 +43,12 @@ const Homepage = () => {
       x: -100,
       opacity: 0,
     })
-
     .from(bento1.current, {
-      y: -100,
+      y: -50,
       opacity: 0,
     }, "-=0.7")
-
     .from(bento2.current, {
-      y: 100,
-      opacity: 0,
-    }, "-=0.8")
-
-    .from(projectShowcase.current, {
-      x: 100,
+      y: 50,
       opacity: 0,
     }, "-=0.8");
 
@@ -87,187 +68,140 @@ const Homepage = () => {
       ease: "back.out(2)"
     }, "-=0.4");
 
-    gsap.to(".shrink-0 img", {
-      y: 5,
+    gsap.to(".profile-img", {
+      y: 8,
       duration: 2,
       repeat: -1,
       yoyo: true,
       ease: "sine.inOut"
     });
   });
-  
-  const scrollToProjects = () => {
-    document.getElementById("projects-section")?.scrollIntoView({behavior: "smooth"})
-  };
 
   return (
     <>
       <div className='flex flex-col min-h-screen w-full items-center p-5 justify-center'>
-        <div className='grid gap-2 grid-cols-1 lg:grid-cols-[2fr_1fr_1fr] w-full max-w-6xl'>
-    
-          <Card ref={mainIntro} className='rounded-4xl p-6 md:p-10 bg-secondary w-full border-none shadow-none flex flex-col justify-between'>
+        <div className='grid gap-4 grid-cols-1 lg:grid-cols-[1.6fr_1fr] w-full max-w-6xl'>
+          
+          {/* LEFT COLUMN: Main Introduction */}
+          <Card ref={mainIntro} className='rounded-4xl p-6 md:p-10 bg-secondary w-full border-none shadow-none flex flex-col justify-between min-h-[500px]'>
             <CardHeader className='flex flex-row justify-between items-center p-0 space-y-0'>
               <div className="shrink-0">
-                <img src={Me} className='w-15 h-15 rounded-lg object-cover' alt="Profile" />
+                <img src={Me} className='profile-img w-16 h-16 rounded-2xl object-cover shadow-sm border-2 border-background' alt="Profile" />
               </div>
-              <div className='flex items-center gap-2 bg-background/50 px-3 py-1 rounded-full'>
-                <span className={`h-2 w-2 rounded-full inline-block ${resume.available ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
+              <div className='flex items-center gap-2 bg-background/50 px-4 py-1.5 rounded-full border border-border/10'>
+                <span className={`h-2.5 w-2.5 rounded-full inline-block ${resume.available ? 'bg-green-500 animate-pulse' : 'bg-red-500'}`} />
                 <p className='font-paragraph text-xs md:text-sm font-medium'>
-                  {resume.available ? 'Available' : 'Not Available'}
+                  {resume.available ? 'Available for work' : 'Busy'}
                 </p>
               </div>
             </CardHeader>
 
-            <CardContent className='p-0 flex flex-col gap-5 md:gap-30'>
-              <h1 className='intro-text font-display text-3xl md:text-4xl lg:text-5xl leading-tight'>
+            <CardContent className='p-0 flex flex-col gap-8'>
+              <h1 className='intro-text font-display text-4xl md:text-6xl lg:text-7xl leading-[1.1] tracking-tight'>
                 Hi, I'm {resume.nickName} <span className='animate-wiggle inline-block origin-bottom-right'>👋</span> <br />
                 <span className="text-muted-foreground">An </span>
                 <span className='text-orange-500'>{resume.position}</span> 
                 <span className="text-muted-foreground"> based in </span>{resume.address}.
               </h1>
 
-              <div className='action-btns flex flex-col sm:flex-row gap-5 justify-between w-full items-center'>
-                <div className='flex flex-row items-center gap-3 w-full sm:w-auto'>
-                  <Button 
-                    size='lg' 
-                    className="flex-1 bg-orange-500 text-secondary hover:bg-orange-300 sm:flex-none"
-                    asChild
-                  >
-                    <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download>
-                      <Download /> Resume
-                    </a>
-                  </Button>
+              <div className='action-btns flex flex-col sm:flex-row gap-4 justify-between w-full items-center'>
+                <Button 
+                  size='lg' 
+                  className="w-full sm:w-auto bg-orange-500 text-white hover:bg-orange-600 rounded-2xl px-8 h-14 text-lg transition-all"
+                  asChild
+                >
+                  <a href="/resume.pdf" target="_blank" rel="noopener noreferrer" download>
+                    <Download className="mr-2 h-5 w-5" /> Download CV
+                  </a>
+                </Button>
+
+                <div className='flex flex-row gap-3'>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button size='icon' variant='outline' className="rounded-2xl size-12 bg-background/50 border-none hover:bg-background transition-colors" asChild>
+                        <a href="https://github.com/Allarezeroes26" target='_blank' rel="noopener noreferrer">
+                          <Github className="size-6"/>
+                        </a>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>GitHub</TooltipContent>
+                  </Tooltip>
+
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <Button size='icon' variant='outline' className="rounded-2xl size-12 bg-background/50 border-none hover:bg-background transition-colors" asChild>
+                        <a href="https://www.linkedin.com/in/john-erwin-bacani-90853a359" target='_blank' rel="noopener noreferrer">
+                          <Linkedin className="size-6"/>
+                        </a>
+                      </Button>
+                    </TooltipTrigger>
+                    <TooltipContent>LinkedIn</TooltipContent>
+                  </Tooltip>
                 </div>
-
-                <div className='flex flex-row justify-center gap-3'>
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button size='icon' variant='ghost' className="rounded-full" asChild>
-                      <a href="https://github.com/Allarezeroes26" target='_blank' rel="noopener noreferrer">
-                        <Github className="size-5"/>
-                      </a>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>GitHub</TooltipContent>
-                </Tooltip>
-
-                <Tooltip>
-                  <TooltipTrigger asChild>
-                    <Button size='icon' variant='ghost' className="rounded-full" asChild>
-                      <a href="https://www.linkedin.com/in/john-erwin-bacani-90853a359" target='_blank' rel="noopener noreferrer">
-                        <Linkedin className="size-5"/>
-                      </a>
-                    </Button>
-                  </TooltipTrigger>
-                  <TooltipContent>LinkedIn</TooltipContent>
-                </Tooltip>
-              </div>
               </div>
             </CardContent>
           </Card>
 
-          <div ref={bento1} className='flex flex-col gap-5'>
+          {/* RIGHT COLUMN: Stack and Toggle */}
+          <div className='flex flex-col gap-4'>
+            
+            {/* Theme Toggle Bento Box */}
             <Card 
+              ref={bento1}
               onClick={() => setTheme(theme === "dark" ? "light" : "dark")} 
-              className='flex-1 cursor-pointer hover:bg-accent/50 transition-all p-4 md:p-6 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center gap-4'
+              className='cursor-pointer hover:bg-accent/50 transition-all p-6 rounded-4xl bg-secondary border-none shadow-none flex items-center justify-between group'
             >
-              <div className="p-3 bg-background w-fit rounded-2xl shadow-sm">
-                { theme === "dark" ? <Moon className='size-6'/> : <Sun className='size-6'/> }
+              <div className='flex items-center gap-4'>
+                <div className="p-3 bg-background rounded-2xl shadow-sm group-hover:rotate-12 transition-transform">
+                  { theme === "dark" ? <Moon className='size-6 text-orange-500'/> : <Sun className='size-6 text-orange-500'/> }
+                </div>
+                <div>
+                  <p className='font-display font-medium'>Appearance</p>
+                  <p className="text-xs text-muted-foreground">{ theme === "dark" ? "Dark Mode" : "Light Mode" }</p>
+                </div>
               </div>
-              <div>
-                <p className='font-display font-medium'>
-                  { theme === "dark" ? "Switch to Light Mode" : "Switch to Dark Mode" }
-                </p>
-                <p className="text-xs text-muted-foreground">Better for your eyes</p>
-              </div>
+              <Badge variant="outline" className="opacity-40 font-mono text-[10px]">THEME</Badge>
             </Card>
             
-            <Card ref={bento2} className='flex-1 p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-between overflow-hidden'>
-              <CardHeader className="p-0 mb-6">
-                <div className="flex items-center justify-between">
-                  <h2 className='font-display text-2xl md:text-3xl'>Tech Stack</h2>
-                  <Badge variant="outline" className="text-[10px] uppercase tracking-widest opacity-60">
-                    {resume.techStack.length} Tools
-                  </Badge>
-                </div>
+            {/* Tech Stack Bento Box */}
+            <Card ref={bento2} className='flex-1 p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col overflow-hidden'>
+              <CardHeader className="p-0 mb-6 flex flex-row items-center justify-between space-y-0">
+                <h2 className='font-display text-2xl md:text-3xl'>Tech Stack</h2>
+                <span className="text-xs font-mono opacity-40">({resume.techStack.length} tools)</span>
               </CardHeader>
               
-              <CardContent className="p-0 relative">
-                {/* Gradient Fades for the edges */}
-                <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-secondary to-transparent z-10" />
-                <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-secondary to-transparent z-10" />
-                
-                {/* Scrolling Container */}
-                <div className="flex gap-4 animate-scroll whitespace-nowrap py-2">
-                  {/* Map twice to create infinite loop effect */}
-                  {[...resume.techStack, ...resume.techStack].map((stack, index) => (
-                    <Tooltip key={`${stack.techName}-${index}`}>
+              <CardContent className="p-0">
+                {/* The Grid: Perfectly aligned tiles */}
+                <div className="grid grid-cols-4 sm:grid-cols-5 lg:grid-cols-4 gap-3">
+                  {resume.techStack.map((stack) => (
+                    <Tooltip key={stack.techName}>
                       <TooltipTrigger asChild>
-                        <div className='p-3 bg-background/40 hover:bg-orange-500/10 rounded-2xl transition-all duration-300 border border-border/50 group'>
+                        <div className='aspect-square flex items-center justify-center bg-background/40 rounded-2xl hover:bg-orange-500/10 transition-all duration-300 group cursor-default border border-transparent hover:border-orange-500/20'>
                           <StackIcon 
                             name={stack.techName} 
-                            className="size-10 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all" 
+                            className="size-7 md:size-9 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-500" 
                           />
                         </div>
                       </TooltipTrigger>
-                      <TooltipContent>{stack.techName}</TooltipContent>
+                      <TooltipContent side="top" className="bg-orange-500 text-white border-none">
+                        {stack.techName}
+                      </TooltipContent>
                     </Tooltip>
                   ))}
                 </div>
               </CardContent>
-              
-              <CardFooter className="p-0 mt-6">
-                <p className="text-xs text-muted-foreground italic">
-                  Constantly evolving my toolkit...
-                </p>
-              </CardFooter>
             </Card>
           </div>
 
-          <div ref={projectShowcase} className='p-0'>
-            <Card className='h-full bg-secondary shadow-none border-none'>
-                <CardHeader>
-                  <h1 className='font-display text-3xl'>My Projects</h1>
-                </CardHeader>
-                <CardContent className='grid grid-cols-1 items-center justify-items-center gap-4'>
-                  {[
-                    { img: JobFu, to: "/projects/jobfu" },
-                    { img: LeadCRM, to: "/projects/allkit" },
-                    { img: Todo, to: "/projects/todo" }
-                  ].map((proj, i) => (
-                    <div 
-                      key={i}
-                      className="group relative w-full max-w-[240px] aspect-video overflow-hidden rounded-2xl"
-                    >
-                      <img 
-                        src={proj.img} 
-                        className='h-full w-full object-cover backdrop-blur-md grayscale group-hover:grayscale-0 transition-all duration-500 group-hover:scale-110 group-hover:opacity-40' 
-                      />
-                      
-                      <button onClick={scrollToProjects} className='absolute inset-0 flex items-center justify-center opacity-0 transition-opacity duration-300 group-hover:opacity-100'>
-                        <span className='font-display text-sm font-bold tracking-wider text-primary'>
-                          VIEW PROJECT
-                        </span>
-                      </button>
-                    </div>
-                  ))}
-
-                  <div className="w-full max-w-[240px]">
-                    <Button onClick={scrollToProjects} className='font-paragraph text-primary hover:text-secondary flex w-full p-4 justify-between bg-background rounded-xl flex-row mt-2'>  
-                      <p className='font-light'>View All</p>
-                      <SquareArrowOutUpRight size={18} />
-                    </Button>
-                  </div>
-                </CardContent>
-            </Card>
-          </div>
         </div>
       </div>
+
+      {/* Sections Below */}
       <About />
       <Projects />
       <Contact />
-    </>  
-  )
-}
+    </>
+  );
+};
 
 export default Homepage;

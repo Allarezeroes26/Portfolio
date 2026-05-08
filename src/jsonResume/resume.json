@@ -46,7 +46,7 @@
             "description": "A machine learning-powered predictive analytics CRM built with FastAPI and Next.js. Designed to analyze customer conversion probability using a custom Logistic Regression model with transparent weight visualization, telemetry dashboards, batch scoring, and real-time inference tracking.",
             "stack": ["Next.js", "FastAPI", "Python", "TailwindCSS", "ShadCN", "NumPy", "Pandas"],
             "demo": true,
-            "link": "https://leadintelligence.onrender.com",
+            "link": "https://lead-scoring-system-maio.onrender.com",
             "srccode": "https://github.com/Allarezeroes26/Lead-Scoring-System",
             "pics": [
                 {

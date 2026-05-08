@@ -13,9 +13,6 @@
             "techName": "nextjs"
         },
         {
-            "techName": "typescript"
-        },
-        {
             "techName": "javascript"
         },
         {
@@ -48,11 +45,12 @@
             "title": "Lead Intelligence System",
             "description": "A machine learning-powered predictive analytics CRM built with FastAPI and Next.js. Designed to analyze customer conversion probability using a custom Logistic Regression model with transparent weight visualization, telemetry dashboards, batch scoring, and real-time inference tracking.",
             "stack": ["Next.js", "FastAPI", "Python", "TailwindCSS", "ShadCN", "NumPy", "Pandas"],
-            "demo": false,
+            "demo": true,
+            "link": "https://leadintelligence.onrender.com",
             "srccode": "https://github.com/Allarezeroes26/Lead-Scoring-System",
             "pics": [
                 {
-                    "showcasePic": "./ProjectPics/LeadCRM.png"
+                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1778244833/Screenshot_2026-05-08_204145_cmh8jg.png"
                 }
             ]
         },

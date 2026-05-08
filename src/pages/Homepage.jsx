@@ -182,27 +182,45 @@ const Homepage = () => {
               </div>
             </Card>
             
-            <Card ref={bento2} className='flex-1 p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-center'>
-              <CardHeader className="p-0 mb-2">
-                <h2 className='font-display text-2xl md:text-3xl'>Tech Stack</h2>
+            <Card ref={bento2} className='flex-1 p-6 md:p-8 rounded-4xl bg-secondary border-none shadow-none flex flex-col justify-between overflow-hidden'>
+              <CardHeader className="p-0 mb-6">
+                <div className="flex items-center justify-between">
+                  <h2 className='font-display text-2xl md:text-3xl'>Tech Stack</h2>
+                  <Badge variant="outline" className="text-[10px] uppercase tracking-widest opacity-60">
+                    {resume.techStack.length} Tools
+                  </Badge>
+                </div>
               </CardHeader>
-              <CardContent className="p-0 flex flex-row gap-5 flex-wrap">
-                {resume.techStack.map((stack) => (
-                  <Tooltip key={stack.techName}>
-                    <TooltipTrigger>
-                      <Badge 
-                        className='p-2 bg-background/50 hover:bg-orange-500/20 transition-colors border-none'
-                      >
-                        <StackIcon 
-                          name={stack.techName} 
-                          className="size-8 grayscale hover:grayscale-0 transition-all" 
-                        />
-                      </Badge>
-                    </TooltipTrigger>
-                    <TooltipContent>{stack.techName}</TooltipContent>
-                  </Tooltip>
-                ))}
+              
+              <CardContent className="p-0 relative">
+                {/* Gradient Fades for the edges */}
+                <div className="absolute inset-y-0 left-0 w-12 bg-gradient-to-r from-secondary to-transparent z-10" />
+                <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-secondary to-transparent z-10" />
+                
+                {/* Scrolling Container */}
+                <div className="flex gap-4 animate-scroll whitespace-nowrap py-2">
+                  {/* Map twice to create infinite loop effect */}
+                  {[...resume.techStack, ...resume.techStack].map((stack, index) => (
+                    <Tooltip key={`${stack.techName}-${index}`}>
+                      <TooltipTrigger asChild>
+                        <div className='p-3 bg-background/40 hover:bg-orange-500/10 rounded-2xl transition-all duration-300 border border-border/50 group'>
+                          <StackIcon 
+                            name={stack.techName} 
+                            className="size-10 grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all" 
+                          />
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent>{stack.techName}</TooltipContent>
+                    </Tooltip>
+                  ))}
+                </div>
               </CardContent>
+              
+              <CardFooter className="p-0 mt-6">
+                <p className="text-xs text-muted-foreground italic">
+                  Constantly evolving my toolkit...
+                </p>
+              </CardFooter>
             </Card>
           </div>
 

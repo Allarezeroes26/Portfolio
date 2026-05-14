@@ -47,7 +47,7 @@ const Homepage = () => {
     <>
       <div className='flex flex-col lg:min-h-screen w-full items-center p-6 lg:p-12 justify-center bg-background'>
         {/* Main Bento Grid */}
-        <div className='grid gap-6 grid-cols-1 lg:grid-cols-[1.4fr_1fr] w-full max-w-7xl'>
+        <div className='grid gap-6 grid-cols-1 lg:grid-cols-[1.4fr_1fr] w-full max-w-6xl'>
           
           {/* LEFT: Introduction Card */}
           <Card ref={mainIntro} className='rounded-[2.5rem] p-10 bg-secondary/50 border-none shadow-none flex flex-col min-h-[600px]'>

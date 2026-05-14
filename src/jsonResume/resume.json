@@ -34,6 +34,21 @@
             "techName": "fastapi"
         },
         {
+            "techName": "langchain"
+        },
+        {
+            "techName": "ollama"
+        },
+        {
+            "techName": "chromadb"
+        },
+        {
+            "techName": "machinelearning"
+        },
+        {
+            "techName": "rag"
+        },
+        {
             "techName": "git"
         },
         {
@@ -41,6 +56,30 @@
         }
     ],
     "projects": [
+        {
+            "title": "DEVDOCS AGENT — Local-First RAG Engine",
+            "description": "A privacy-first Retrieval-Augmented Generation (RAG) system designed for local technical documentation intelligence. Built with FastAPI, ChromaDB, LangChain, Ollama, and Phi-4-Mini, the engine supports Hybrid Search (BM25 + Semantic Retrieval), OCR fallback for scanned PDFs, persistent vector storage, and source-aware AI responses. Includes a modern Next.js frontend with Zustand-powered persistent UI state and a lightweight CLI interface for terminal-based interaction.",
+            "stack": [
+                "Next.js",
+                "FastAPI",
+                "Python",
+                "LangChain",
+                "Ollama",
+                "Phi-4-Mini",
+                "ChromaDB",
+                "BM25",
+                "TailwindCSS",
+                "Zustand",
+                "PyTesseract"
+            ],
+            "demo": false,
+            "srccode": "https://github.com/Allarezeroes26",
+            "pics": [
+                {
+                    "showcasePic": "YOUR_RAG_PROJECT_SCREENSHOT_URL"
+                }
+            ]
+        },
         {
             "title": "Lead Intelligence System",
             "description": "A machine learning-powered predictive analytics CRM built with FastAPI and Next.js. Designed to analyze customer conversion probability using a custom Logistic Regression model with transparent weight visualization, telemetry dashboards, batch scoring, and real-time inference tracking.",

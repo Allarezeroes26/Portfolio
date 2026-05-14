@@ -34,21 +34,6 @@
             "techName": "fastapi"
         },
         {
-            "techName": "langchain"
-        },
-        {
-            "techName": "ollama"
-        },
-        {
-            "techName": "chromadb"
-        },
-        {
-            "techName": "machinelearning"
-        },
-        {
-            "techName": "rag"
-        },
-        {
             "techName": "git"
         },
         {
@@ -94,6 +79,19 @@
             ]
         },
         {
+            "title": "Full-Stack Todo & Focus Timer App",
+            "description": "A productivity-focused application that combines task management with an integrated Pomodoro focus timer. Built with efficient global state management using Zustand and designed to improve workflow organization and concentration tracking.",
+            "stack": ["React", "MongoDB", "Express.js", "Node.js", "DaisyUI", "TailwindCSS", "Zustand"],
+            "link": "https://todolist-frontend-tmm7.onrender.com",
+            "demo": true,
+            "srccode": "https://github.com/Allarezeroes26/TodoList",
+            "pics": [
+                {
+                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212592/Screenshot_2026-02-02_070256_efat02.png"
+                }
+            ]
+        },
+        {
             "title": "JobFu (Job Portal Web Platform)",
             "description": "A full-stack recruitment platform designed to streamline interaction between employers and job seekers. Features secure authentication, role-based access, dynamic job posting management, application tracking, and responsive UI architecture for seamless user experience.",
             "stack": ["React", "MongoDB", "Express.js", "Node.js", "ShadCN", "TailwindCSS", "Zustand"],
@@ -120,26 +118,6 @@
             ]
         },
         {
-            "title": "Full-Stack Todo & Focus Timer App",
-            "description": "A productivity-focused application that combines task management with an integrated Pomodoro focus timer. Built with efficient global state management using Zustand and designed to improve workflow organization and concentration tracking.",
-            "stack": ["React", "MongoDB", "Express.js", "Node.js", "DaisyUI", "TailwindCSS", "Zustand"],
-            "link": "https://todolist-frontend-tmm7.onrender.com",
-            "demo": true,
-            "srccode": "https://github.com/Allarezeroes26/TodoList",
-            "pics": [
-                {
-                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212592/Screenshot_2026-02-02_070256_efat02.png"
-                }
-            ]
-        },
-        {
-            "title": "Python File Organizer",
-            "description": "An automation utility that intelligently sorts and categorizes files based on extension type. Designed to reduce manual file management and improve workspace organization through Python scripting automation.",
-            "stack": ["Python"],
-            "demo": false,
-            "srccode": "https://github.com/Allarezeroes26/File-Organizer"
-        },
-        {
             "title": "Game Library",
             "description": "A dynamic gaming discovery platform powered by API integration and advanced filtering capabilities. Users can browse titles by genre, platform, and popularity while interacting with animated UI transitions powered by GSAP.",
             "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js", "GSAP"],
@@ -149,19 +127,6 @@
             "pics": [
                 {
                     "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212571/Screenshot_2026-02-16_104854_zfpryu.png"
-                }
-            ]
-        },
-        {
-            "title": "URL Shortener",
-            "description": "A lightweight URL shortening service utilizing Node.js and Bitly API integration to transform long URLs into clean, manageable links with fast response handling and simplified sharing functionality.",
-            "stack": ["HTML", "CSS", "JS", "Node.js", "Express.js"],
-            "demo": true,
-            "link": "https://url-shortener-z7fr.onrender.com",
-            "srccode": "https://github.com/Allarezeroes26/URL-Shortener",
-            "pics": [
-                {
-                    "showcasePic": "https://res.cloudinary.com/dsax1vq0y/image/upload/v1771212570/Screenshot_2026-02-16_105205_zg9cff.png"
                 }
             ]
         }

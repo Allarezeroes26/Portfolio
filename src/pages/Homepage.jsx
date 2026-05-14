@@ -49,7 +49,6 @@ const Homepage = () => {
         {/* Main Bento Grid */}
         <div className='grid gap-6 grid-cols-1 lg:grid-cols-[1.4fr_1fr] w-full max-w-6xl'>
           
-          {/* LEFT: Introduction Card */}
           <Card ref={mainIntro} className='rounded-[2.5rem] p-10 bg-secondary/50 border-none shadow-none flex flex-col min-h-[600px]'>
             <CardHeader className='flex flex-row justify-between items-start p-0 mb-12'>
               <img src={Me} className='w-20 h-20 rounded-2xl object-cover' alt="Profile" />
@@ -62,7 +61,7 @@ const Homepage = () => {
             </CardHeader>
 
             <CardContent className='p-0 flex flex-col gap-10 flex-grow justify-center'>
-              <h1 className='intro-text font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight font-medium'>
+              <h1 className='intro-text font-display text-3xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight font-medium'>
                 Hi, I'm {resume.nickName} <span className='inline-block'>👋</span> <br />
                 <span className="opacity-30">An </span>
                 <span className='text-orange-500 font-bold'>{resume.position}</span> <br/>

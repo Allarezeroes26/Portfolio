@@ -13,9 +13,6 @@
             "techName": "nextjs"
         },
         {
-            "techName": "javascript"
-        },
-        {
             "techName": "nodejs"
         },
         {
@@ -29,9 +26,6 @@
         },
         {
             "techName": "python"
-        },
-        {
-            "techName": "fastapi"
         },
         {
             "techName": "git"

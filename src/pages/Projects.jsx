@@ -1,4 +1,4 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef } from 'react';
 import resume from '../jsonResume/resume.json';
 import { SquareArrowOutUpRight, Github, Code2, Plus } from 'lucide-react';
 import { Card } from "@/components/ui/card";
@@ -17,16 +17,15 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProjectCard = ({ project, index, isLarge }) => {
+const ProjectCard = ({ project, isFeatured = false }) => {
   const hasImage = project.pics && project.pics.length > 0;
   
   return (
     <Card 
-      className={`anim-card group relative overflow-hidden border-none bg-secondary shadow-none flex flex-col transition-all duration-500 hover:ring-1 hover:ring-primary/20 ${
-        isLarge ? 'md:col-span-2 lg:col-span-3 lg:row-span-2' : 'md:col-span-2 lg:col-span-2'
-      }`}
+      className={`anim-card group relative overflow-hidden border-none bg-secondary shadow-none flex flex-col transition-all duration-500 hover:ring-1 hover:ring-primary/20 
+        md:col-span-2 lg:col-span-2`} // Forces all 3 to be equal size (1/3 of the 6-col grid)
     >
-      <div className={`${hasImage ? 'h-48 md:h-full' : 'h-32'} w-full overflow-hidden bg-muted/10 flex items-center justify-center shrink-0`}>
+      <div className={`${hasImage ? 'h-48 md:h-64' : 'h-32'} w-full overflow-hidden bg-muted/10 flex items-center justify-center shrink-0`}>
         {hasImage ? (
           <img 
             src={project.pics[0].showcasePic} 
@@ -38,25 +37,25 @@ const ProjectCard = ({ project, index, isLarge }) => {
         )}
       </div>
 
-      <div className={`${hasImage ? 'md:absolute md:inset-x-0 md:bottom-0 bg-secondary/90' : 'bg-secondary'} backdrop-blur-md p-6 flex flex-col gap-4 transition-all duration-300 group-hover:bg-secondary/95 border-t border-white/5 h-full md:h-auto`}>
+      <div className="p-6 flex flex-col gap-4 bg-secondary flex-grow">
         <div>
           <h3 className='font-display text-lg md:text-xl text-orange-500 font-bold leading-tight'>
             {project.title}
           </h3>
-          <p className='text-muted-foreground text-xs md:text-sm mt-1'>
+          <p className='text-muted-foreground text-xs md:text-sm mt-1 line-clamp-3'>
             {project.description}
           </p>
         </div>
 
         <div className='flex flex-wrap gap-2'>
           {project.stack.map((tech, i) => (
-            <Badge key={i} variant="default" className="text-[11px] font-semibold bg-primary/20 text-primary hover:bg-primary/30 border-none px-3 py-1 uppercase tracking-wider">
+            <Badge key={i} variant="default" className="text-[10px] font-semibold bg-primary/10 text-primary border-none px-2 py-0.5 uppercase tracking-wider">
               {tech}
             </Badge>
           ))}
         </div>
 
-        <div className='flex items-center gap-2 mt-auto pt-2'>
+        <div className='flex items-center gap-2 mt-auto pt-4'>
           {project.demo && (
             <Button variant="default" size="sm" className="h-8 px-4 gap-2 text-xs" onClick={() => window.open(project.link, '_blank')}>
               Demo <SquareArrowOutUpRight size={14} />
@@ -75,6 +74,7 @@ const ProjectCard = ({ project, index, isLarge }) => {
 
 const Projects = () => {
   const containerRef = useRef(null);
+  // Separate the first 3 from the rest
   const featuredProjects = resume.projects.slice(0, 3);
   const remainingProjects = resume.projects.slice(3);
 
@@ -120,13 +120,13 @@ const Projects = () => {
         </p>
       </div>
 
-      <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-4 w-full max-w-6xl auto-rows-auto md:auto-rows-[400px] mb-12'>
+      {/* Grid for exactly 3 items per row on large screens */}
+      <div className='grid grid-cols-1 md:grid-cols-4 lg:grid-cols-6 gap-6 w-full max-w-6xl mb-12'>
         {featuredProjects.map((project, index) => (
           <ProjectCard 
             key={index} 
             project={project} 
-            index={index} 
-            isLarge={index === 0 || index === 1} 
+            isFeatured={true}
           />
         ))}
       </div>
@@ -138,17 +138,15 @@ const Projects = () => {
               View More Projects <Plus size={18} />
             </Button>
           </DialogTrigger>
-          <DialogContent className="max-w-7xl h-[90vh] overflow-y-auto bg-background/95 backdrop-blur-xl border-white/10">
-            <DialogHeader>
-              <DialogTitle className="text-3xl font-display font-bold mb-6">Archive & Side Projects</DialogTitle>
+          <DialogContent className="max-w-7xl h-[90vh] overflow-y-auto bg-background/95 backdrop-blur-xl border-white/10 p-6 md:p-10">
+            <DialogHeader className="mb-8">
+              <DialogTitle className="text-3xl md:text-5xl font-display font-bold tracking-tight">Archive & Side Projects</DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-10">
               {remainingProjects.map((project, index) => (
                 <ProjectCard 
                   key={index + 3} 
                   project={project} 
-                  index={index} 
-                  isLarge={false}
                 />
               ))}
             </div>

@@ -1,6 +1,6 @@
-import React, { useLayoutEffect, useRef } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import resume from '../jsonResume/resume.json';
-import { SquareArrowOutUpRight, Github, Code2, Plus } from 'lucide-react';
+import { SquareArrowOutUpRight, Github, Code2, Plus, ChevronDown, ChevronUp } from 'lucide-react';
 import { Card } from "@/components/ui/card";
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -17,12 +17,13 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 
 gsap.registerPlugin(ScrollTrigger);
 
-const ProjectCard = ({ project }) => {
+const ProjectCard = ({ project, isFeatured = false }) => {
+  const [isExpanded, setIsExpanded] = useState(false);
   const hasImage = project.pics && project.pics.length > 0;
   
   return (
     <Card className="anim-card group relative overflow-hidden border-none bg-secondary shadow-none flex flex-col transition-all duration-500 hover:ring-1 hover:ring-primary/20 h-full">
-      <div className="h-48 w-full overflow-hidden bg-muted/10 flex items-center justify-center shrink-0">
+      <div className={`${isFeatured ? 'h-52' : 'h-40'} w-full overflow-hidden bg-muted/10 flex items-center justify-center shrink-0`}>
         {hasImage ? (
           <img 
             src={project.pics[0].showcasePic} 
@@ -39,9 +40,24 @@ const ProjectCard = ({ project }) => {
           <h3 className='font-display text-lg text-orange-500 font-bold leading-tight'>
             {project.title}
           </h3>
-          <p className='text-muted-foreground text-xs mt-2 line-clamp-2'>
-            {project.description}
-          </p>
+          
+          {/* Description Logic */}
+          <div className='mt-2'>
+            <p className={`text-muted-foreground text-xs leading-relaxed transition-all duration-300 ${
+              !isFeatured && !isExpanded ? 'line-clamp-2' : 'line-clamp-none'
+            }`}>
+              {project.description}
+            </p>
+            
+            {!isFeatured && project.description.length > 60 && (
+              <button 
+                onClick={() => setIsExpanded(!isExpanded)}
+                className="text-primary text-[10px] font-bold mt-1 flex items-center gap-1 hover:underline"
+              >
+                {isExpanded ? <>Show Less <ChevronUp size={10} /></> : <>Read More <ChevronDown size={10} /></>}
+              </button>
+            )}
+          </div>
         </div>
 
         <div className='flex flex-wrap gap-1.5'>
@@ -103,10 +119,10 @@ const Projects = () => {
         </p>
       </div>
 
-      {/* Main Grid: Forces 3 equal columns */}
+      {/* Main Row: 3 Equal width columns, Full descriptions */}
       <div className='grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-6xl mb-12'>
         {featuredProjects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} isFeatured={true} />
         ))}
       </div>
 
@@ -117,14 +133,13 @@ const Projects = () => {
               View More Projects <Plus size={18} />
             </Button>
           </DialogTrigger>
-          {/* max-w-[95vw] makes the dialog take up the width of the screen instead of being vertical */}
-          <DialogContent className="max-w-[95vw] lg:max-w-[80vw] h-[85vh] overflow-y-auto bg-background/98 backdrop-blur-xl border-white/10 p-6">
+          <DialogContent className="max-w-[95vw] lg:max-w-[85vw] h-[85vh] overflow-y-auto bg-background/98 backdrop-blur-xl border-white/10 p-6">
             <DialogHeader className="mb-8">
               <DialogTitle className="text-3xl font-display font-bold">Project Archive</DialogTitle>
             </DialogHeader>
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 pb-10">
               {remainingProjects.map((project, index) => (
-                <ProjectCard key={index + 3} project={project} />
+                <ProjectCard key={index + 3} project={project} isFeatured={false} />
               ))}
             </div>
           </DialogContent>

@@ -1,7 +1,6 @@
 import React, { useRef } from 'react';
 import resume from '../jsonResume/resume.json';
 import Me from '../assets/me.jpg';
-// Added Download icon
 import { Download, Github, Linkedin, Moon, Sun } from 'lucide-react'; 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
@@ -71,7 +70,6 @@ const Homepage = () => {
               </h1>
 
               <div className='action-btns flex items-center gap-4'>
-                {/* PRIMARY DOWNLOAD BUTTON */}
                 <Button className="rounded-2xl h-14 px-8 bg-orange-500 text-white border-none hover:bg-orange-600 transition-all font-bold gap-2 group shadow-lg shadow-orange-500/20" asChild>
                   <a href="/resume.pdf" download="Resume_John_Erwin_Bacani.pdf">
                     <Download className="size-5 group-hover:-translate-y-1 transition-transform" />

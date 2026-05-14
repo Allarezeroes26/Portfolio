@@ -1,7 +1,8 @@
 import React, { useRef } from 'react';
 import resume from '../jsonResume/resume.json';
 import Me from '../assets/me.jpg';
-import { Download, Github, Linkedin, Moon, Sun } from 'lucide-react';
+// Added Download icon
+import { Download, Github, Linkedin, Moon, Sun } from 'lucide-react'; 
 import { Card, CardContent, CardHeader } from "@/components/ui/card";
 import { Button } from '@/components/ui/button';
 import { Tooltip, TooltipContent, TooltipTrigger } from "@/components/ui/tooltip";
@@ -47,8 +48,9 @@ const Homepage = () => {
     <>
       <div className='flex flex-col lg:min-h-screen w-full items-center p-6 lg:p-12 justify-center bg-background'>
         {/* Main Bento Grid */}
-        <div className='grid gap-6 grid-cols-1 lg:grid-cols-[1.4fr_1fr] w-full max-w-6xl'>
+        <div className='grid gap-6 grid-cols-1 lg:grid-cols-[1.4fr_1fr] w-full max-w-7xl'>
           
+          {/* LEFT: Introduction Card */}
           <Card ref={mainIntro} className='rounded-[2.5rem] p-10 bg-secondary/50 border-none shadow-none flex flex-col min-h-[600px]'>
             <CardHeader className='flex flex-row justify-between items-start p-0 mb-12'>
               <img src={Me} className='w-20 h-20 rounded-2xl object-cover' alt="Profile" />
@@ -61,7 +63,7 @@ const Homepage = () => {
             </CardHeader>
 
             <CardContent className='p-0 flex flex-col gap-10 flex-grow justify-center'>
-              <h1 className='intro-text font-display text-3xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight font-medium'>
+              <h1 className='intro-text font-display text-4xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight font-medium'>
                 Hi, I'm {resume.nickName} <span className='inline-block'>👋</span> <br />
                 <span className="opacity-30">An </span>
                 <span className='text-orange-500 font-bold'>{resume.position}</span> <br/>
@@ -69,16 +71,27 @@ const Homepage = () => {
               </h1>
 
               <div className='action-btns flex items-center gap-4'>
-                <Button size='icon' variant='secondary' className="rounded-2xl size-14 bg-background/60 border-none hover:bg-orange-500 hover:text-white transition-all group" asChild>
-                  <a href="https://github.com/Allarezeroes26" target='_blank' rel="noopener noreferrer">
-                    <Github className="size-6"/>
+                {/* PRIMARY DOWNLOAD BUTTON */}
+                <Button className="rounded-2xl h-14 px-8 bg-orange-500 text-white border-none hover:bg-orange-600 transition-all font-bold gap-2 group shadow-lg shadow-orange-500/20" asChild>
+                  <a href="/resume.pdf" download="Resume_John_Erwin_Bacani.pdf">
+                    <Download className="size-5 group-hover:-translate-y-1 transition-transform" />
+                    Download CV
                   </a>
                 </Button>
-                <Button size='icon' variant='secondary' className="rounded-2xl size-14 bg-background/60 border-none hover:bg-orange-500 hover:text-white transition-all group" asChild>
-                  <a href="https://www.linkedin.com/in/john-erwin-bacani-90853a359" target='_blank' rel="noopener noreferrer">
-                    <Linkedin className="size-6"/>
-                  </a>
-                </Button>
+
+                {/* SOCIAL BUTTONS */}
+                <div className='flex items-center gap-3'>
+                    <Button size='icon' variant='secondary' className="rounded-2xl size-14 bg-background/60 border-none hover:bg-orange-500 hover:text-white transition-all group" asChild>
+                    <a href="https://github.com/Allarezeroes26" target='_blank' rel="noopener noreferrer">
+                        <Github className="size-6"/>
+                    </a>
+                    </Button>
+                    <Button size='icon' variant='secondary' className="rounded-2xl size-14 bg-background/60 border-none hover:bg-orange-500 hover:text-white transition-all group" asChild>
+                    <a href="https://www.linkedin.com/in/john-erwin-bacani-90853a359" target='_blank' rel="noopener noreferrer">
+                        <Linkedin className="size-6"/>
+                    </a>
+                    </Button>
+                </div>
               </div>
             </CardContent>
           </Card>

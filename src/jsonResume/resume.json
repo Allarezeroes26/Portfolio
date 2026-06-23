@@ -99,8 +99,8 @@
             ]
         },
         {
-            "title": "OSINT-CN",
-            "description": "An elite 10-stage Threat Intelligence and Cyber Reconnaissance simulation modeled on real-world military intelligence workflows within the Chinese digital ecosystem. Acted as a digital forensics analyst to trace a target's identity from a t00ls hacking forum leak, pivot the extracted QQ ID across Baidu Zhidao, map regional transit patterns to triangulate a physical location, exploit infrastructure endpoints for QQ-to-Mobile-to-Weibo correlations, and verify a cross-platform digital footprint across WeChat and blockchain-based authentication mechanisms.",
+            "title": "OSINT-CN (Hacktoria - CTF)",
+            "description": "An elite 10-stage Threat Intelligence and Cyber Reconnaissance simulation CTF modeled on real-world military intelligence workflows within the Chinese digital ecosystem. Acted as a digital forensics analyst to trace a target's identity from a t00ls hacking forum leak, pivot the extracted QQ ID across Baidu Zhidao, map regional transit patterns to triangulate a physical location, exploit infrastructure endpoints for QQ-to-Mobile-to-Weibo correlations, and verify a cross-platform digital footprint across WeChat and blockchain-based authentication mechanisms.",
             "stack": [
                 "Threat Intelligence",
                 "Identity Pivoting",
